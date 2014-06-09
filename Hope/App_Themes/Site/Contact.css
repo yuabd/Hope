@@ -1,0 +1,21 @@
+﻿#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+#container h1.title
+{
+	color: Green;
+	font-size: large;
+}
+.content
+{
+	float: left;
+}

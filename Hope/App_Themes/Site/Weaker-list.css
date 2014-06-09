@@ -1,0 +1,129 @@
+﻿/*--------------------------------------[璺緞]--------------------------------------*/
+#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto 10px auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+/*--------------------------------------[/璺緞]--------------------------------------*/
+/*--------------------------------------[鍐呭]--------------------------------------*/
+#container #one, #container #two, #container #three, #container #four
+{
+	margin-right: 10px;
+	width: 240px;
+}
+#container #four
+{
+	margin-right: 0px;
+}
+#container a#wish
+{
+	width: 240px;
+	height: 40px;
+	display: inline-block;
+	background: url(images/img.png) -710px -81px no-repeat;
+	margin-bottom: 10px;
+}
+#container a:hover#wish
+{
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#container #select_city, #container #select_town
+{
+	padding: 20px 22px;
+	width: 194px;
+	border: #e5e5e5 1px solid;
+	text-align: left;
+}
+#container #select_city
+{
+	border-top: #47b200 3px solid;
+}
+#container #select_town
+{
+	border-top: none;
+	margin-bottom: 10px;
+	background: #f9f9fb;
+}
+
+#container #select_city a, #container #select_town a
+{
+	display: inline-block;
+	min-width: 47px;
+	height: 29px;
+	line-height: 29px;
+	white-space: nowrap;
+	padding: 0 3px;
+}
+#container #select_city .current, #container #select_town .current
+{
+	background: #47b200;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#container .example
+{
+	padding: 10px 0;
+	width: 238px;
+	border: #e5e5e5 1px solid;
+	margin-bottom: 10px;
+	background: #f9f9fb;
+}
+#container .example img
+{
+	margin-bottom: 10px;
+}
+#container .example dl, #container .example dt, #container .example dd
+{
+	margin: 0;
+	padding: 0;
+	line-height: 18px;
+}
+
+#container .example dt, #container .example dd
+{
+	text-align: left;
+	padding: 0 10px;
+}
+#container .example dd
+{
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: #e5e5e5 1px solid;
+}
+#container .example dl, #container .example dl a
+{
+	color: #999;
+}
+#container .example dl h1
+{
+	display: block;
+	text-align: left;
+	color: #333;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+#container .example dd h1
+{
+	font-weight: 100;
+}
+#container .example dd a
+{
+	display: block;
+	text-align: left;
+}
+#container .example dd .right
+{
+	color: #999;
+}
+/*--------------------------------------[/鍐呭]--------------------------------------*/

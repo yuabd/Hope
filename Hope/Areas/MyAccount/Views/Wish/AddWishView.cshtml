@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "AddWishView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section scripts{
+	<script src="/Plugins/WDatePicker/WdatePicker.js" type="text/javascript"></script>
+	<link href="/Plugins/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+	<script src="/Plugins/uploadify/swfobject.js" type="text/javascript"></script>
+	<script src="/Plugins/uploadify/jquery.uploadify.js" type="text/javascript"></script>
+	<script>
+		function Save() {
+			if (!$.validatebox.valid()) {
+				return;
+			}
+			var pictureFile = $("#LogoImgURL").val();
+			if (pictureFile == "") {
+				alert("请上传或选择一张图片");
+				return;
+			}
+			//pictureFile = "/content/images/" + pictureFile;
+			var param = $(".pagetable").GetPostData();
+			param.PictureFile = pictureFile;
+
+			$.U1Ajax("/MyAccount/Wish/AddWishJosn", param, function (result) {
+				if (result.Tag > 0) {
+					alert('保存成功,请耐心等待管理员审核! ');
+					closeSelectTab(request.QueryString("tab"));
+				}
+				else {
+					alert(result.Message);
+				}
+			}, false);
+		}
+		$(function () {
+			$("#makechoose input:radio").change(function () {
+				var checked = $("#makechoose input:radio").eq(0).attr("checked");
+				//alert(checked);
+				if (checked) {
+					$("#self").hide();
+					$("#choose").show();
+				} else {
+					$("#self").show();
+					$("#choose").hide();
+				}
+			});
+
+			$("#choose input:radio").change(function () {
+				var picture = $("#choose input:radio:checked").val();
+				picture += ".jpg";
+				$("#LogoImgURL").val(picture);
+			});
+
+			$("#uploadify").uploadify({
+				'uploader': "/Plugins/uploadify/uploadify.swf?t=" + new Date().getTime(),
+				'script': "/Upload/UploadImage",
+				'cancelImg': "/Plugins/uploadify/cancel.png",
+				'queueID': 'fileQueue',
+				'folder': '/Content/Images/',
+				'wmode': 'opaque',
+				'auto': true,
+				'multi': false,
+				'buttonImg': "/Plugins/uploadify/UpImg.gif",
+				'width': '65',
+				'height': '27',
+				'fileDesc': '*.gif;*.jpg;*.jpeg;*.png',
+				'fileExt': '*.gif;*.jpg;*.jpeg;*.png',
+				'sizeLimit': 1024 * 500,
+				'onSelect': function (e, fileObj) {
+				},
+				'onComplete': function (event, queueID, fileObj, response, data) {
+					var obj = eval('(' + response + ')');
+					$("#LogoImgURL").val(obj.imgUrl);
+					//$("#LogoImgID").val(obj.queueID);
+					$("#showImg").attr("src", '/content/images/' + obj.imgUrl);
+					$("#showImg").show();
+				}
+			});
+		});
+	</script>
+}
+<table class="pagetable">
+	<tr>
+		<td class="title">
+			<span class="red">*</span> 心愿标题:
+		</td>
+		<td>
+			<input class="textbox" type="text" col="Title" validtype="required(心愿标题)" style="width: 440px;" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span> 发布人寄语:
+		</td>
+		<td>
+			<textarea class="textarea" col="Hope" validtype="required(发布人寄语)"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color: #3C455F; color: White; text-align: center;
+			font-size: 16px;">
+			许愿人情况
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span>许愿人姓名:
+		</td>
+		<td>
+			<input type="text" col="Name" class="textbox" validtype="required(许愿人姓名)" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span> 许愿人简介:
+		</td>
+		<td>
+			<textarea class="textarea" col="Description" validtype="required(许愿人简介)"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span> 愿望:
+		</td>
+		<td>
+			<textarea class="textarea" col="WishDescription" validtype="required(愿望)"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span>图片:</span>
+		</td>
+		<td>
+			<div id="makechoose">
+				<input type="radio" name="way" value="choose" checked="checked" />选择一张做为图片
+				<input type="radio" name="way" value="self" />自己上传
+			</div>
+			<div style="margin-top: 20px;">
+				<div id="self" style="display: none;">
+					<input type="file" onclick='return false;' id="uploadify" />
+					<div id="fileQueue">
+					</div>
+					<font class="other">(大小:500KB以下)</font>
+					<br />
+					<div>
+						<img id="showImg" style="display: none; width: 150px;" />
+					</div>
+				</div>
+				<div id="choose">
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/default.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="default" checked="checked" />
+					</div>
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/Head1.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="Head1" />
+					</div>
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/Head2.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="Head2" />
+					</div>
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/Head3.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="Head3" />
+					</div>
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/Head4.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="Head4" />
+					</div>
+					<div style="float: left; margin-right: 10px;">
+						<img src="/Content/images/Head5.jpg" style="width: 120px; height: 120px;" /><br />
+						<input type="radio" name="picture" value="Head5" />
+					</div>
+				</div>
+			</div>
+			<input type="hidden" id="LogoImgURL" value="default.jpg" name="LogoImgURL" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+		</td>
+		<td>
+			<input type="button" onclick="Save()" value="保存" />
+		</td>
+	</tr>
+</table>

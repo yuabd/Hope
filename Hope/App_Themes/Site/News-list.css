@@ -1,0 +1,71 @@
+﻿#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto 10px auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+#container
+{
+	overflow: hidden;
+	padding-top: 20px;
+}
+#container #example
+{
+	padding: 0;
+	margin: 0;
+	width: 1010px;
+}
+#container #example *
+{
+	text-align: left;
+}
+#container #example li
+{
+	padding: 12px;
+	list-style: none;
+	border: #e6e6e6 1px solid;
+	width: 450px;
+	float: left;
+	text-align: left;
+	position: relative;
+}
+#container #example li dt a
+{
+	font-size: 20px;
+	color: #47b200;
+}
+#container #example li dd
+{
+	line-height: 20px;
+	color: #333;
+	word-spacing: 20px;
+}
+#container #example li dd a
+{
+	color: #333;
+	display: inline-block;
+	margin-right: 10px;
+}
+#container #example li dd.describe
+{
+	height: 50px;
+	color: #999;
+}
+#container #example li dd.flag
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 56px;
+	height: 56px;
+}
+.page
+{
+	margin-bottom: 20px;
+}

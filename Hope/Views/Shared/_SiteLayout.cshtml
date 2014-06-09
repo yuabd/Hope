@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="微心愿 微梦想" />
+	<meta name="description" content="小心愿，大梦想" />
+	<title>@ViewBag.Title</title>
+	<link href="../../App_Themes/Site/global.css" rel="stylesheet" type="text/css" />
+	<link href="../../App_Themes/Site/layout.css" rel="stylesheet" type="text/css" />
+	<link href="../../App_Themes/Site/common.css" rel="stylesheet" type="text/css" />
+
+	@RenderSection("head", false)
+</head>
+<body>
+	<!--------------------------------------[头部]-------------------------------------->
+	<div id="head">
+		<div class="container">
+			<div id="logo" class="left">
+			</div>
+			<div id="navigation" class="left">
+				<ul>
+					<li class="@ViewBag.Home"><a href="/" target="">首页</a></li>
+					<li class="@ViewBag.Wish"><a href="/Home/wishlist" target="">心愿</a></li>
+					<li class="@ViewBag.Weaker"><a href="/Home/weakerlist" target="">心愿发起人</a></li>
+					<li class="@ViewBag.News"><a href="/News" target="">新闻公告</a></li>
+					<li class="@ViewBag.Contact"><a href="/Contact" target="">简介</a></li>
+				</ul>
+				@*<div id="value">
+					</div>*@
+			</div>
+			<div id="block" class="right">
+				<div id="login">
+				@if (User.Identity.IsAuthenticated)
+	{ 
+		<a href="/MyAccount/Home/Index">@Hope.Helpers.UserHelper.UserName</a>
+		<a href="/Account/Logout">退出</a>
+	}
+	else
+	{
+		<a href="/Account/Index">登录</a> <a href="/Account/register">注册</a>
+	}
+				</div>
+				<div id="search">
+					<!------------ dropdown_frame begin ------------>
+					<div id='dropdown_frame'>
+						<div class="dropdown_box">
+							<span class="dropdown_left"></span>
+						</div>
+						<ul>
+							<li value="2">心愿</li>
+							<li value="1">用户</li>
+						</ul>
+						<!------------ dropdown_frame end ------------>
+						<input type="hidden" name="search_type" value="" />
+					</div>
+					<input id='search_text' type="text" value='' onkeydown="if(event.keyCode==13){search();}" />
+					<input name="" type="button" id="search_button" onclick="search()" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------[/头部]-------------------------------------->
+	@RenderBody()
+	<!--------------------------------------[底部]-------------------------------------->
+	<div id="foot">
+		<div class="container">
+			<div class="left">
+				<a href="/Contact" target="">关于我们</a> | 联系电话：0592-88888888
+			</div>
+			<div class="right">
+				<div>
+				</div>
+			</div>
+			<div class="left">
+				© 2013 主办单位厦门机关党委@*, 技术支持: <a href="http://www.henhaoji.com.cn" target="_blank">锤子网站建设</a>*@</div>
+			<!-- <div class="right button"><a href="#">立即加入</a></div> -->
+		</div>
+	</div>
+	<!--------------------------------------[/底部]-------------------------------------->
+	<script src="/Scripts/JQuery.js" type="text/javascript"></script>
+	<script src="/Scripts/Form.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/scripts/jquery-dropdown.js"></script>
+	<script>
+
+		$(function () {
+			$("#dropdown_frame").dropdown({ index: '' });
+		});
+		function search() {
+			_search_type = $("input[name=search_type]").val();
+			_search_text = $("#search_text").val();
+
+			if (_search_type == 1)
+				window.location = "/Home/WeakerList?name=" + _search_text;
+			else if (_search_type == 2)
+				window.location = "/Home/WishList?title=" + _search_text;
+
+		}
+	</script>
+	@RenderSection("scripts", false)
+</body>
+</html>

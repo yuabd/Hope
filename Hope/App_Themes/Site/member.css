@@ -1,0 +1,478 @@
+﻿/*--------------------------------------[璺緞]--------------------------------------*/
+#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+/*--------------------------------------[/璺緞]--------------------------------------*/
+/*--------------------------------------[宸--------------------------------------*/
+#container #left
+{
+	width: 710px;
+	border-right: #dfdfdf 1px solid;
+	float: left;
+	padding: 20px 10px 0 0;
+}
+#container #left #info
+{
+	height: 190px;
+	text-align: left;
+}
+#container #left #info img
+{
+	vertical-align: top;
+}
+#container #left #info dl, #container #left #info dt, #container #left #info dd
+{
+	padding: 0;
+	margin: 0;
+}
+#container #left #info *
+{
+	text-align: left;
+}
+#container #left #info dl
+{
+	width: 360px;
+	display: block;
+}
+#container #left #info dt
+{
+	color: #333;
+	font-size: 16px;
+	margin: 10px 0 0 30px;
+	line-height: 35px;
+	height: 120px;
+}
+#container #left #info dt span
+{
+	color: #47b200;
+	font-size: 30px;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+#container #left #info dt a
+{
+	width: 57px;
+	height: 30px;
+	background: #47b200;
+	color: #FFF;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+}
+#container #left #info dd
+{
+	margin: 0 0 0 25px;
+}
+#container #left #info dd ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 250px;
+}
+#container #left #info dd ul li
+{
+	float: left;
+	padding: 0 10px;
+	border-right: 1px #e5e5e5 solid;
+	font-size: 20px;
+}
+#container #left #info dd ul li a
+{
+	width: 30px;
+	line-height: 20px;
+	font-size: 20px;
+	float: none;
+	background: none;
+	color: #666;
+	font-weight: 100;
+}
+#container #left #info #agree
+{
+	min-width: 94px;
+	height: 94px;
+	border: #ececec 8px solid;
+	float: right;
+	text-align: center;
+	margin-right: 10px;
+}
+#container #left #info #agree h1
+{
+	color: #47b200;
+	font-size: 30px;
+	text-align: center;
+	margin: 20px 0 0 0;
+	padding: 0;
+	font-weight: 100;
+}
+#container #left #info #agree h2
+{
+	text-align: center;
+	color: #333;
+	font-size: 16px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+#container #left #info #agree a
+{
+	display: inline-block;
+	width: 94px;
+	height: 94px;
+}
+#container #left #info #agree a:hover
+{
+	text-decoration: none;
+	background: #ececec;
+}
+/*--------------------------------------------------*/
+#container #left #describe
+{
+	width: 648px;
+	border: #e6e6e6 1px solid;
+	margin: 20px 0 40px 0;
+	padding: 20px 30px;
+	background: #f9f9fb;
+}
+#container #left #describe dt
+{
+	font-size: 22px;
+	color: #333;
+	margin: 0 0 20px 0;
+	padding: 0;
+	width: 648px;
+	text-align: left;
+}
+#container #left #describe dd
+{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	color: #333;
+	width: 648px;
+	text-align: left;
+	line-height: 24px;
+}
+
+/*--------------------------------------------------*/
+#container #left .listbox, #container #left dt, #container #left .listbox dd
+{
+	padding: 0;
+	margin: 0;
+}
+#container #left .idTabs .title
+{
+	width: 710px;
+	height: 33px;
+	background: url(images/img.png) -0px -850px no-repeat;
+	text-align: left;
+	color: #999;
+}
+#container #left .idTabs .title a
+{
+	display: inline-block;
+	width: 105px;
+	height: 33px;
+	background: url(images/img.png) -176px -850px no-repeat;
+	font-size: 18px;
+	font-weight: bold;
+}
+#container #left .idTabs .title a:hover
+{
+	background: url(images/img.png) -176px -883px no-repeat;
+	text-decoration: none;
+}
+
+#container #left .idTabs .title a.selected
+{
+	background: url(images/img.png) -176px -883px no-repeat;
+	text-decoration: none;
+	color: #333;
+}
+/*--------------------------------------------------*/
+#container #left .listbox dd
+{
+	padding: 10px 0 10px 30px;
+	text-align: left;
+}
+#container #left .listbox dd span, #container #left .listbox dd a
+{
+	color: #333;
+}
+#container #left .listbox dd span
+{
+	display: inline-block;
+	width: 90px;
+	text-align: left;
+}
+#container #left .listbox .people dd span
+{
+	width: 120px;
+}
+#container #left .listbox dd .topic
+{
+	width: 230px;
+}
+#container #left .listbox .people dd .topic
+{
+	width: 270px;
+}
+#container #left .listbox .people dd .name
+{
+	width: 170px;
+}
+#container #left .listbox .label
+{
+	line-height: 40px;
+}
+/*--------------------------------------------------*/
+#container #left .page
+{
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 0;
+	background: #FFF;
+}
+/*--------------------------------------[/宸--------------------------------------*/
+/*--------------------------------------[鍙砞--------------------------------------*/
+#container #right
+{
+	width: 248px;
+	float: right;
+	padding: 20px 0 0 20px;
+}
+/*#container #right dl, #container #right dt, #container #right dd
+{
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+#container #right dt
+{
+	font-size: 20px;
+	margin-bottom: 22px;
+}
+#container #right dd
+{
+	float: left;
+	width: 60px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	line-height: 26px;
+	text-align: center;
+	word-break: normal;
+	word-wrap: break-word;
+}*/
+/*--------------------------------------[/鍙砞--------------------------------------*/
+#container .items
+{
+	background: #f9f9fb;
+}
+#container .items .bg
+{
+	background: #FFF;
+}
+
+/*-------- album begin --------*/
+#tbody
+{
+	width: 700px;
+}
+#mainbody
+{
+	width: 640px;
+	margin: 5px;
+	padding: 1px;
+	border: solid 1px #222222;
+	cursor: pointer;
+}
+#goleft
+{
+	clear: left;
+	float: left;
+	margin: 0 10px 0 0;
+	cursor: pointer;
+}
+#goright
+{
+	clear: right;
+	float: right;
+	margin: 0 0 0 10px;
+	cursor: pointer;
+}
+#photos
+{
+	width: 580px;
+	height: 110px;
+	line-height: 110px;
+	overflow: hidden;
+	margin: 10px 0;
+}
+#show_area img
+{
+	margin: 0 3px;
+	float: left;
+	display: block;
+	cursor: pointer;
+}
+#show_area
+{
+	line-height: 110px;
+}
+/*-------- album end --------*/
+
+#container #right #show, #container #right #show dt, #container #right #show dd
+{
+	margin: 0;
+	padding: 0;
+}
+#container #right #show .show_title
+{
+	background: #ececec;
+	height: 50px;
+	color: #333;
+	font-size: 20px;
+	text-align: left;
+	padding-top: 30px;
+	text-indent: 22px;
+}
+/* 姝ゆCSS瀹氫箟浼氶€犳垚鍔ㄧ敾鏈夊崱鐗㈢殑鐜拌薄
+#container #right #show li {
+	text-align:left;
+	margin:10px 10px 0 10px;
+	border-top:#d6d6d6 1px dotted;
+	padding-top:10px;
+	}*/
+
+#container #right #show li img
+{
+	vertical-align: top;
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	margin-right: 17px;
+}
+#container #right #show li span
+{
+	text-align: left;
+	display: inline-block;
+	width: 168px;
+	color: #666;
+	line-height: 18px;
+}
+#container #right #show li span a
+{
+	color: #6abe40;
+}
+#container #right #show li span.time
+{
+	color: #999;
+}
+/*--------------------------------------------------*/
+#container #right #already, #container #right #already dt, #container #right #already dd
+{
+	margin: 0;
+	padding: 0;
+}
+#container #right #already dt
+{
+	background: #ececec;
+	height: 50px;
+	color: #333;
+	font-size: 20px;
+	text-align: left;
+	padding-top: 30px;
+	text-indent: 22px;
+	margin: 15px 0 15px 0;
+}
+#container #right #already dd
+{
+	text-align: left;
+	padding: 0 20px;
+}
+#container #right #already dd a
+{
+	color: #333;
+	line-height: 24px;
+}
+#container #right #already
+{
+	margin-bottom: 40px;
+}
+
+
+/*--------------- slide begin ---------------*/
+/*frame (container and control)*/
+#slide_frame
+{
+	position: relative;
+	margin-top: 10px;
+}
+#slide_frame .slide_container
+{
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: left;
+}
+/*ol and li*/
+#slide_frame .slide_ol, #slide_frame .slide_ol li
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#slide_frame .slide_ol li
+{
+	border-top: #d6d6d6 1px dotted;
+}
+/*ol(large)*/
+#slide_frame .slide_ol
+{
+	position: absolute;
+}
+/* need for ie6 */
+/*img*/
+#slide_frame .slide_ol img
+{
+	border: solid 0px;
+	vertical-align: top;
+}
+.inline
+{
+	display: inline;
+}
+/* horizon */
+.block
+{
+	display: block;
+}
+/* vertical */
+#slide_frame .slide_control
+{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	cursor: pointer;
+}
+#slide_frame, #slide_frame .slide_container, #slide_frame .slide_ol li
+{
+	width: 270px;
+	height: 80px;
+}
+#slide_frame .slide_container
+{
+	height: 320px;
+}

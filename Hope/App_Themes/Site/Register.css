@@ -1,0 +1,169 @@
+﻿/*--------------------------------------[路径]--------------------------------------*/
+#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+/*--------------------------------------------------*/
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+.title
+{
+	background: url("images/img.png") no-repeat scroll 0 -850px transparent;
+	height: 33px;
+	text-align: left;
+	width: 990px;
+	margin: 20px auto;
+}
+.title a.selected
+{
+	background: url("images/img.png") no-repeat scroll -176px -883px transparent;
+	color: #333333;
+	text-decoration: none;
+}
+.title a
+{
+	background: url("images/img.png") no-repeat scroll -176px -850px transparent;
+	color: #999999;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	height: 33px;
+	width: 105px;
+}
+/*--------------------------------------[/路径]--------------------------------------*/
+#container dl, #container dl dt, #container dl dd
+{
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+#container dl
+{
+	padding: 0;
+	margin-bottom: 30px;
+}
+
+#container dl dd, #container dl dt
+{
+	margin-left: 20px;
+}
+#container dl dt
+{
+	font-size: 14px;
+	line-height: 60px;
+}
+#container dl dd
+{
+	margin: 10px 0;
+	font-size: 14px;
+	padding-left: 20px;
+}
+#container #submit
+{
+	width: 135px;
+	height: 32px;
+	display: inline-block;
+	background: url(images/img.png) -710px -0px no-repeat;
+	border: 0;
+	cursor: pointer;
+}
+#container #submit:hover
+{
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#container dl dd span
+{
+	width: 120px;
+	display: inline-block;
+	text-align: left;
+	font-size: 14px;
+}
+#container dl dd input
+{
+	width: 168px;
+	height: 38px;
+	border: #bebebe 1px solid;
+	text-align: left;
+	font-size: 14px;
+	line-height: 38px;
+	vertical-align: middle;
+	margin-right: 10px;
+	padding: 0 5px;
+}
+#container dl dd img
+{
+	vertical-align: middle;
+	border: #bebebe 1px solid;
+}
+#container dl dd.radio input
+{
+	width: 15px;
+	border: none;
+}
+#container dl dd.address input
+{
+	width: 428px;
+}
+#container dl dd.up
+{
+	overflow: hidden;
+/*	height: 160px;*/
+}
+/*#container dl dd.up a
+{
+	width: 81px;
+	height: 30px;
+	display: inline-block;
+	background: url(images/img.png) -896px -32px no-repeat;
+	margin-right: 20px;
+	overflow: hidden;
+}*/
+#container dl dd.up img.pre_showimg
+{
+	vertical-align: top;
+	width: 158px;
+	height: 158px;
+}
+.pre_showbox
+{
+	top: 0;
+	left: 100px;
+}
+.pre_file
+{
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 81px;
+	height: 30px;
+	overflow: hidden;
+}
+.pre_box
+{
+	vertical-align: top;
+	margin-left: -3px;
+	width: 500px;
+	position: relative;
+}
+.desc textarea
+{
+	vertical-align: middle;
+	width: 428px !important;
+	border: 1px solid #BEBEBE;
+	font-size: 14px;
+	padding: 0 5px;
+	text-align: left;
+	line-height: 22px;
+	height: 70px;
+}

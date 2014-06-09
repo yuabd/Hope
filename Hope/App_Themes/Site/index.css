@@ -1,0 +1,613 @@
+﻿/*--------------------------------------[灞曠ず妯箙]--------------------------------------*/
+#banner
+{
+	height: 300px;
+	background: #dfdfdf;
+}
+/*--------------------------------------[/灞曠ず妯箙]--------------------------------------*/
+#join
+{
+	width: 710px;
+	height: 60px;
+	background: url(images/img.png) -0px -90px no-repeat;
+	text-align: left;
+	float: left;
+}
+#join a
+{
+	display: inline-block;
+	background: url(images/img.png) -356px -0px no-repeat;
+}
+
+/*--------------------------------------[鍐呭]--------------------------------------*/
+
+/*--------------------------------------[宸--------------------------------------*/
+#container #left
+{
+	float: left;
+	width: 710px;
+}
+
+
+#container #left #tile
+{
+	width: 710px;
+	height: 540px;
+	overflow: hidden;
+}
+#container #left #tile a
+{
+	text-decoration: none;
+}
+#container #left #tile .left
+{
+	float: left;
+	margin-bottom: 10px;
+}
+#container #left #tile .right
+{
+	float: right;
+	margin-bottom: 10px;
+}
+/*--------------------------------------------------*/
+#container #left #tile #wish_num
+{
+	width: 350px;
+	height: 170px;
+	background: url(images/bg.png) -0px -0px no-repeat;
+	overflow: hidden;
+}
+#container #left #tile #wish_num span
+{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+}
+#container #left #tile #wish_num a
+{
+	display: inline-block;
+	color: #FFF;
+	font-size: 60px;
+	width: 200px;
+	height: 170px;
+	line-height: 195px;
+	text-align: left;
+	padding-left: 150px;
+}
+#container #left #tile #wish_num a:hover
+{
+	background: url(images/bg.png) -350px -0px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #tile #weaker_num
+{
+	width: 350px;
+	height: 170px;
+	background: url(images/bg.png) -0px -170px no-repeat;
+	overflow: hidden;
+}
+#container #left #tile #weaker_num span
+{
+	color: #167f39;
+	font-size: 16px;
+	font-weight: bold;
+}
+#container #left #tile #weaker_num a
+{
+	display: inline-block;
+	color: #167f39;
+	font-size: 60px;
+	width: 185px;
+	height: 170px;
+	line-height: 195px;
+	text-align: left;
+	padding-left: 165px;
+}
+#container #left #tile #weaker_num a:hover
+{
+	background: url(images/bg.png) -350px -170px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #tile #unfinished
+{
+	width: 170px;
+	height: 170px;
+	background: url(images/bg.png) -0px -340px no-repeat;
+	overflow: hidden;
+}
+#container #left #tile #unfinished span
+{
+	color: #167f39;
+	font-size: 16px;
+	font-weight: bold;
+}
+#container #left #tile #unfinished a
+{
+	display: inline-block;
+	width: 145px;
+	height: 170px;
+	color: #167f39;
+	text-align: left;
+	font-size: 36px;
+	line-height: 130px;
+	padding-left: 25px;
+}
+#container #left #tile #unfinished a:hover
+{
+	background: url(images/bg.png) -170px -340px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #tile #photo1
+{
+	width: 170px;
+	height: 170px;
+	margin: 0 0 0 10px;
+	overflow: hidden;
+}
+/*--------------------------------------------------*/
+#container #left #tile #photo2
+{
+	width: 180px;
+	height: 170px;
+	overflow: hidden;
+	text-align: left;
+}
+#container #left #tile #photo2 img
+{
+	margin: 0 0 10px 10px;
+}
+/*--------------------------------------------------*/
+#container #left #tile #give
+{
+	width: 170px;
+	height: 170px;
+	background: url(images/bg.png) -340px -340px no-repeat;
+}
+#container #left #tile #give a
+{
+	display: inline-block;
+	width: 170px;
+	height: 170px;
+}
+#container #left #tile #give a:hover
+{
+	background: url(images/bg.png) -510px -340px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #tile #finished
+{
+	width: 350px;
+	height: 170px;
+	background: url(images/bg.png) -0px -510px no-repeat;
+	overflow: hidden;
+}
+#container #left #tile #finished span
+{
+	color: #167f39;
+	font-size: 16px;
+	font-weight: bold;
+}
+#container #left #tile #finished a
+{
+	display: inline-block;
+	color: #167f39;
+	font-size: 60px;
+	width: 200px;
+	height: 170px;
+	line-height: 195px;
+	text-align: left;
+	padding-left: 150px;
+}
+#container #left #tile #finished a:hover
+{
+	background: url(images/bg.png) -350px -510px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #tile #give_num
+{
+	width: 350px;
+	height: 170px;
+	background: url(images/bg.png) -0px -680px no-repeat;
+	overflow: hidden;
+}
+#container #left #tile #give_num span
+{
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+}
+#container #left #tile #give_num a
+{
+	display: inline-block;
+	color: #FFF;
+	font-size: 60px;
+	width: 185px;
+	height: 170px;
+	line-height: 195px;
+	text-align: left;
+	padding-left: 165px;
+}
+#container #left #tile #give_num a:hover
+{
+	background: url(images/bg.png) -350px -680px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #left #news
+{
+	width: 710px;
+	border-top: #e9e9e9 1px solid;
+}
+#container #left #news dl
+{
+	padding: 0;
+	margin: 0;
+	min-height: 205px;
+	clear: both;
+	border-bottom: #e9e9e9 1px solid;
+}
+#container #left #news dt
+{
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 55px;
+}
+#container #left #news dd
+{
+	padding: 0 10px 0 0;
+	margin: 0 0 15px 0;
+	text-align: left;
+	line-height: 20px;
+}
+#container #left #news dd img
+{
+	float: left;
+	margin: 4px 10px 0 0;
+	border: #cbcbcb 1px solid;
+}
+#container #left #news dd .date
+{
+	color: #999;
+	display: block;
+	text-align: left;
+}
+/*--------------------------------------[/宸--------------------------------------*/
+/*--------------------------------------[鍙砞--------------------------------------*/
+#container #right
+{
+	float: right;
+	width: 270px;
+}
+#container #right #share
+{
+	width: 270px;
+	height: 80px;
+	text-align: left;
+}
+#container #right #share span
+{
+	display: inline-block;
+	width: 60px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: top;
+	margin-top: 14px;
+}
+#container #right #share a
+{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 8px;
+	margin-top: 14px;
+}
+#container #right #share a.one
+{
+	background: url(images/img.png) -491px -0px no-repeat;
+}
+#container #right #share a.two
+{
+	background: url(images/img.png) -523px -0px no-repeat;
+}
+#container #right #share a.three
+{
+	background: url(images/img.png) -555px -0px no-repeat;
+}
+#container #right #share a.four
+{
+	background: url(images/img.png) -587px -0px no-repeat;
+}
+#container #right #share a.five
+{
+	background: url(images/img.png) -619px -0px no-repeat;
+}
+/*--------------------------------------------------*/
+#container #right #login
+{
+	width: 250px;
+	height: 150px;
+	padding: 20px 0 0 20px;
+	text-align: left;
+	overflow: hidden;
+	margin-bottom: 10px;
+	background: #f9f9fb;
+}
+#container #right #login input
+{
+	width: 228px;
+	height: 38px;
+	border: 1px solid #dfdfdf;
+	text-align: left;
+	text-indent: 11px;
+	color: #999;
+	margin-bottom: 10px;
+	line-height: 38px;
+	float: left;
+	clear: both;
+}
+#container #right #login .button
+{
+	width: 59px;
+	height: 30px;
+	border: none;
+	background: url(images/img.png) -651px -0px no-repeat;
+	margin-right: 10px;
+}
+
+#container #right #login .button:hover
+{
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#container #right #login a
+{
+	line-height: 32px;
+	float: left;
+}
+#container #right #login a.right
+{
+	color: #47b200;
+	font-weight: bold;
+	font-size: 14px;
+	margin-right: 20px;
+	float: right;
+}
+#container #right #login dl
+{
+	margin: 0;
+	padding: 0;
+}
+#container #right #login dt
+{
+	margin: 0;
+	padding: 0;
+	height: 90px;
+}
+#container #right #login dt span, #container #right #login dt span .name
+{
+	margin-top: 15px;
+	display: inline-block;
+	width: 150px;
+	color: #47b200;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 20px;
+	float: right;
+	font-size: 16px;
+}
+
+#container #right #login dt span a
+{
+	display: block;
+	text-align: left;
+}
+#container #right #login dt a
+{
+	display: inline-block;
+	font-weight: 100;
+	float: none;
+}
+#container #right #login dt .img
+{
+	border: 3px #e5e5e5 solid;
+	margin-right: 10px;
+	float: left;
+}
+#container #right #login dd
+{
+	width: 250px;
+	float: left;
+	text-align: left;
+	padding: 0;
+	margin: 10px 0 0 -10px;
+}
+#container #right #login dd ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 250px;
+}
+#container #right #login dd li
+{
+	float: left;
+	padding: 0 10px;
+	border-right: 1px #e5e5e5 solid;
+	text-align: left;
+}
+#container #right #login dd li a
+{
+	width: 30px;
+	line-height: 20px;
+	font-size: 16px;
+	float: none;
+}
+/*--------------------------------------------------*/
+
+#container #right .ranklist
+{
+	width: 270px;
+	height: 347px;
+	background: #fbf7ec;
+	border-top: #ff7e00 3px solid;
+	margin-bottom: 10px;
+}
+#container #right .newslist
+{
+	height: 180px;
+}
+#container #right .ranklist a
+{
+	display: block;
+	width: 270px;
+	height: 49px;
+	background: url(images/img.png) -356px -32px no-repeat;
+}
+#container #right .newslist a
+{
+	background: url(images/img.png) -0px -1233px no-repeat;
+}
+/*
+#container #right #ranklist a:hover{
+	background:url(images/img.png) -626px -32px no-repeat;
+	}
+	*/
+#container #right .ranklist ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#container #right .ranklist ul .right, #container #right .ranklist ul .left
+{
+	font-weight: bold;
+}
+#container #right .ranklist li
+{
+	width: 230px;
+	margin: 0 auto;
+	padding: 0;
+	height: 27px;
+	text-align: right;
+	clear: both;
+}
+#container #right .ranklist li a
+{
+	background: none;
+	display: inline;
+	float: left;
+	width: auto;
+	height: auto;
+}
+#container #right .ranklist li a:hover
+{
+	background: none;
+}
+/*--------------------------------------------------*/
+#container #right #img
+{
+}
+#container #right #img img
+{
+	margin-bottom: 10px;
+}
+/*--------------------------------------------------*/
+/*--------------------------------------[/鍙砞--------------------------------------*/
+/*--------------------------------------[鍙嬫儏閾炬帴]--------------------------------------*/
+#container #partner
+{
+	clear: both;
+}
+#container #partner dl
+{
+	padding: 0;
+	margin: 0;
+}
+#container #partner dt
+{
+	padding: 20px 0 10px 20px;
+	margin: 0;
+	text-align: left;
+	color: #167f39;
+	font-size: 20px;
+	border-bottom: #dfdfdf 1px solid;
+	line-height: 40px;
+}
+#container #partner dd
+{
+	padding: 10px 20px 25px 20px;
+	margin: 0;
+	text-align: left;
+}
+#container #partner dd span
+{
+	display: block;
+	width: 960px;
+	text-align: left;
+	font-weight: bold;
+	line-height: 30px;
+	font-size: 14px;
+}
+#container #partner dd a
+{
+	display: inline-block;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	width: auto;
+	line-height: 22px;
+	white-space: nowrap;
+}
+/*--------------------------------------[/鍙嬫儏閾炬帴]--------------------------------------*/
+
+#bdshare_l_c *
+{
+	text-align: left !important;
+}
+#slides
+{
+	background-color: #fff;
+	width: 100%;
+	height: 400px;
+	margin-top: -225px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 20px;
+	top: 50%;
+	left: 0;
+}
+#unfinished_list:hover
+{
+	background-color: rgb(255, 204, 0);
+}
+#unfinished_list
+{
+	width: 350px;
+	margin-left: 10px;
+	height: 170px;
+	margin-bottom: 10px;
+	background-color: rgb(255, 173, 0);
+	color: White;
+}
+#unfinished_list ul
+{
+	padding-left: 15px;
+	list-style-type: disc;
+}
+#unfinished_list ul li
+{
+	line-height: 20px;
+	height: 20px;
+	text-align: left;
+}
+#unfinished_list ul li em
+{
+	float: right;
+	color: White;
+}
+#unfinished_list ul li a
+{
+	color: White;
+}

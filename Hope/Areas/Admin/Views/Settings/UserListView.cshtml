@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "UserListView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="searchBar">
+	<ul>
+        <li>
+			<span class="title">用户名：</span>
+			<input col="UserName" type="text" />
+		</li>
+	</ul>
+</div>
+@*<div class="toolBar">
+	<table cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+	            <a href="javascript:void(0)" class="easyui-linkbutton" plain="false" iconcls="icon-add"
+	               onclick="Del()">批量删除</a>
+            </td>
+        </tr>
+    </table>
+</div>*@
+
+<div id="DataGrid">
+</div>
+<script>
+	Search = function () {
+		Reflesh();
+	};
+
+	var url = "/Admin/Settings/UserListJson";
+	//刷新
+	function Reflesh() {
+		var param = $(".searchBar").GetPostData();
+
+		DataGridExtend.searchGrid("DataGrid", param, url);
+	};
+
+	$(function () {
+		var param = $('.searchBar').GetPostData();
+
+		$('#DataGrid').U1EasyGrid({
+			queryParams: param,
+			singleSelect: false,
+			url: url,
+			columns: [[
+                { field: 'ck', title: '选择', checkbox: true },
+                { field: 'UserName', title: '用户名', align: 'center', width: 100 },
+                //{ field: 'RealName', title: '许愿人', align: 'center', width: 80 },
+                { field: 'DateStart', title: '注册时间', align: 'center', width: 100, formatter: DataGridExtend.datetimeFormat },
+                { field: 'LastLoginDate', title: '最后登录时间', align: 'center', width: 100, formatter: DataGridExtend.datetimeFormat },
+				//{ field: 'IsApply', title: '状态', align: 'center', width: 100, formatter: },
+				{ field: 'Heart', title: '爱心数量', sortable: true, align: 'center', width: 100 },
+                { field: 'op', title: '操作', align: 'center', formatter: opFormat, width: 150 }
+          ]]
+		});
+	});
+
+	//操作列
+	function opFormat(val, row, rowIndex) {
+		var html = "";
+		html = "<a href=\"javascript:void(0)\"  onClick=\"Edit('" + row.ID + "')\" >编辑</a> | ";
+		html += "<a href=\"javascript:void(0)\"  onClick=\"Del('" + row.ID + "')\" >删除</a>";
+		return html;
+	}
+
+	function Edit(id) {
+		openPage('编辑用户', '/admin/Settings/EditUserView?id=' + id + "&tab=" + getTabTitle());
+	}
+
+	function Del(id) {
+		if (confirm('确认要删除该用户吗？')) {
+			$.U1Ajax('/admin/Settings/DeleteUserJson/' + id, null, function (result) {
+				if (result.Tag == 1) {
+					alert("删除成功！");
+					Reflesh();
+				} else {
+					alert(result.Message);
+				}
+			}, false);
+		}
+	}
+
+</script>

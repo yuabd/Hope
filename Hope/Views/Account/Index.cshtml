@@ -1,0 +1,50 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/Register.css" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+	<script>
+		$(function () {
+			ChangeCheckCode();
+		});
+		function ChangeCheckCode() {
+			var url = '/Account/GetValidateCode';
+			$("#imgCheckCode").attr("src", "" + url + "?time=" + (new Date()).getTime());
+		};
+	</script>
+}
+<div id="path">
+	<div class="left">
+		首页 &gt; 登录</div>
+</div>
+<form id="form1" action="/Account/Index" method="post" enctype="multipart/form-data">
+<div id="container">
+	<dl>
+		<dd>
+			<span>用户名：</span><input type="text" name="UserID" value="">
+			<span class="help-inline p_tip hide"></span><span class="help-inline p_chk hide">
+			</span>
+		</dd>
+		<dd>
+			<span>密码：</span><input type="password" name="password" value="">
+			<span class="help-inline p_tip hide"></span><span class="help-inline p_chk hide">
+			</span>
+		</dd>
+		<dd>
+			<span>验证码：</span><input type="text" name="ValidCode" value="">
+			<img width="68px" height="30px" title="刷新验证码" id="imgCheckCode" src="" style="margin-left: 3px;
+				vertical-align: middle; cursor: pointer;" onclick="ChangeCheckCode()">（点击更换验证码）
+			<span class="help-inline p_tip hide"></span><span class="help-inline p_chk hide">
+			</span>
+		</dd>
+		<dd>
+			<label style="color: Red;">@ViewBag.LoginError</label></dd>
+		<dd style="border-top: #e0e0e0 1px solid; padding-top: 30px; margin-top: 20px; margin-bottom: 10px;">
+			<span></span>
+			<input id="submit" type="submit" value=""></dd>
+	</dl>
+</div>
+</form>

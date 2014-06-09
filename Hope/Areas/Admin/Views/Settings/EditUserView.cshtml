@@ -1,0 +1,127 @@
+﻿@model Hammer.Logic.Models.User
+@{
+	ViewBag.Title = "EditUserView";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="pagetable">
+	<tr>
+		<td class="title">
+			<span class="red">*</span>用户名:
+		</td>
+		<td>
+			<input type="text" class="textbox" col="UserName" value="@Model.UserName" validtype="required(用户名)" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			密码:
+		</td>
+		<td>
+			<input type="password" class="textbox" col="Password" value="" />
+			<span class="icon-tip" style="padding-left: 18px; margin-left: 18px;">若不修改,则留空!</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			头像:
+		</td>
+		<td>
+			<input type="file" onclick='return false;' id="uploadify" />
+			<div id="fileQueue">
+			</div>
+			<font class="other">(大小:500KB以下)</font>
+			<br />
+			<div>
+				<img id="showImg" style="display: none; width: 150px;" />
+			</div>
+			@*<input type="hidden" id="LogoImgID" name="LogoImgID" />*@
+			<input type="hidden" id="LogoImgURL" value="@Model.HeadPicture" name="LogoImgURL" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span>真实姓名:
+		</td>
+		<td>
+			<input type="text" class="textbox" col="RealName" value="@Model.RealName" validtype="required(真实姓名)" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			<span class="red">*</span>手机号:
+		</td>
+		<td>
+			<input type="text" class="textbox" col="Phone" value="@Model.Phone" validtype="required(手机号)|Phone" />
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+			自我介绍:
+		</td>
+		<td>
+			<textarea col="Description" class="textarea">@Model.Description</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="title">
+		</td>
+		<td>
+			<input type="hidden" col="ID" value="@Model.ID" />
+			<input type="button" onclick="Save()" value="保存" />
+		</td>
+	</tr>
+</table>
+<link href="/Plugins/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+<script src="/Plugins/uploadify/swfobject.js" type="text/javascript"></script>
+<script src="/Plugins/uploadify/jquery.uploadify.js" type="text/javascript"></script>
+<script>
+	$(function () {
+		$("#showImg").attr("src", '/content/images/' + '@Model.HeadPicture');
+		$("#showImg").show();
+
+		$("#uploadify").uploadify({
+			'uploader': "/Plugins/uploadify/uploadify.swf?t=" + new Date().getTime(),
+			'script': "/Upload/UploadImage",
+			'cancelImg': "/Plugins/uploadify/cancel.png",
+			'queueID': 'fileQueue',
+			'folder': '/Content/Images/',
+			'wmode': 'opaque',
+			'auto': true,
+			'multi': false,
+			'buttonImg': "/Plugins/uploadify/UpImg.gif",
+			'width': '65',
+			'height': '27',
+			'fileDesc': '*.gif;*.jpg;*.jpeg;*.png',
+			'fileExt': '*.gif;*.jpg;*.jpeg;*.png',
+			'sizeLimit': 1024 * 500,
+			'onSelect': function (e, fileObj) {
+			},
+			'onComplete': function (event, queueID, fileObj, response, data) {
+				var obj = eval('(' + response + ')');
+				$("#LogoImgURL").val(obj.imgUrl);
+				//$("#LogoImgID").val(obj.queueID);
+				$("#showImg").attr("src", '/content/images/' + obj.imgUrl);
+				$("#showImg").show();
+			}
+		});
+	});
+
+	function Save() {
+		if (!$.validatebox.valid()) {
+			return;
+		}
+
+		var param = $(".pagetable").GetPostData();
+		param.HeadPicture = $("#LogoImgURL").val();
+
+		$.U1Ajax("/Admin/Settings/EditUserJson", param, function (result) {
+			if (result.Tag > 0) {
+				alert('保存成功! ');
+				closeSelectTab(request.QueryString("tab"));
+			}
+			else {
+				alert(result.Message);
+			}
+		}, false);
+	}
+</script>

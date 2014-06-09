@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@section head{
+	<script type="text/javascript">
+		$(function () {
+			$("#apply").dialog({ autoOpen: false, modal: true, title: '认领信息', width: 550 });
+		});
+
+		function Apply(name, address, tel, message) {
+			$("#ContactName").val(name);
+			$("#ContactAddress").val(address);			
+			$("#ContactTel").val(tel);
+			$("#Message").val(message);
+
+			$("#apply").dialog("open");
+			$("#apply").dialog({ title: '认领信息' });
+		}
+	</script>
+}
+
+<div id="apply">
+	<form>
+		<div class="row">
+			<label>姓名：</label>
+			<input type="text" disabled="disabled" id="ContactName" />
+		</div>
+		<div class="row">
+			<label>单位：</label>
+			<input type="text" disabled="disabled" id="ContactAddress" />
+		</div>
+		@*<div class="row">
+			<label>邮箱：</label>
+			<input type="text" disabled="disabled" id="ContactEmail" />
+		</div>*@
+		<div class="row">
+			<label>联系电话：</label>
+			<input type="text" disabled="disabled" id="ContactTel" />
+		</div>
+		<div class="row">
+			<label>留言：</label>
+			<textarea cols="" disabled="disabled" rows="" style="width: 300px; height: 80px;" id="Message"></textarea>
+		</div>
+	</form>
+</div>
+<h2>愿望中心</h2>
+<p><a href="/admin/wish/add" class="button-add">新增愿望</a></p>
+<table class="grid">
+	<colgroup>
+		<col width="3%" />
+		<col width="8%" />
+		<col width="10%" />
+		<col width="5%" />
+		<col width="5%" />
+		<col width="8%" />
+		<col width="5%" />
+		<col width="15%" />
+		<col width="15%" />
+		<col width="15%" />
+		<col width="11%" />
+	</colgroup>
+	<tr>
+		<th>编号</th>
+		<th>姓名</th>
+		<th>负责人</th>
+		<th>性别</th>
+		<th>年龄</th>
+		<th>地址</th>
+		<th>联系电话</th>
+		<th>家庭情况</th>
+		<th>小小愿望</th>
+		<th>认领状态</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model)
+ {
+	 <tr>
+		<td>@item.WishID</td>
+		<td>@item.StudentName</td>
+		<td>@item.SchoolName</td>
+		<td>@item.Gender</td>
+		<td>@item.Age</td>
+		<td>@item.Address</td>
+		<td>@item.Tel</td>
+		<td>@item.Situation</td>
+		<td>@item.Detail</td>
+		<td>
+			@if (item.IsApply)
+   {
+	   <span style="padding: 2px 5px;width: 50px; height: 20px; background-color: Green;"><a style="color: #fff;" href="#" onclick="Apply('@item.Apply.ContactName','@item.Apply.ContactAddress','@item.Apply.ContactTel','@item.Apply.Message')">已认领</a></span>
+	   <a href="/admin/wish/deleteapply/@item.WishID">重新认领</a>
+   }
+   else
+   {
+	   <span style="padding: 2px 5px;width: 50px; height: 20px; background-color: Red; color: #fff;">未认领</span>
+   }
+		</td>
+		<td>
+			<a href="/admin/wish/edit/@item.WishID" class="button-edit-icon">编辑</a>
+			<a href="/admin/wish/delete/@item.WishID" class="button-delete-icon delete">删除</a>
+		</td>
+	 </tr>
+ }
+</table>
+@Model.Pager("pager")

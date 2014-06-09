@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A45B406-0598-44C5-A5E6-747635AA6D51}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hope</RootNamespace>
+    <AssemblyName>Hope</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\工具\dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsManageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WishController.cs" />
+    <Compile Include="Areas\MyAccount\Controllers\HomeController.cs" />
+    <Compile Include="Areas\MyAccount\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\MyAccount\Controllers\WishController.cs" />
+    <Compile Include="Areas\MyAccount\MyAccountAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ControlController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IO.cs" />
+    <Compile Include="Helpers\LabelHelper.cs" />
+    <Compile Include="Helpers\LoginHelper.cs" />
+    <Compile Include="Helpers\MenuHelper.cs" />
+    <Compile Include="Helpers\NewsHelper.cs" />
+    <Compile Include="Helpers\SystemHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
+    <Compile Include="Helpers\WishHelper.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Paginated.cs" />
+    <Compile Include="Models\SitePaginated.cs" />
+    <Compile Include="Models\xheditorModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SiteService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Wish.sdf" />
+    <Content Include="App_Themes\Admin\Default.css" />
+    <Content Include="App_Themes\Admin\images\caozuojilu.png" />
+    <Content Include="App_Themes\Admin\images\combo_arrow_new.gif" />
+    <Content Include="App_Themes\Admin\images\head_bg.png" />
+    <Content Include="App_Themes\Admin\images\head_icos.png" />
+    <Content Include="App_Themes\Admin\images\head_menu_bg.png" />
+    <Content Include="App_Themes\Admin\images\head_menu_split.png" />
+    <Content Include="App_Themes\Admin\images\left_layout_button_down.GIF" />
+    <Content Include="App_Themes\Admin\images\left_layout_button_up.GIF" />
+    <Content Include="App_Themes\Admin\images\left_select_bg.gif" />
+    <Content Include="App_Themes\Admin\images\login_bg.png" />
+    <Content Include="App_Themes\Admin\images\menu_selected.png" />
+    <Content Include="App_Themes\Admin\images\tabs_leftarrow.png" />
+    <Content Include="App_Themes\Admin\images\tabs_rightarrow.png" />
+    <Content Include="App_Themes\Admin\images\top_body_bg %281%29.png" />
+    <Content Include="App_Themes\Admin\images\top_body_bg.png" />
+    <Content Include="App_Themes\Admin\images\turnleft.gif" />
+    <Content Include="App_Themes\Admin\images\turnright.gif" />
+    <Content Include="App_Themes\Admin\Page.css" />
+    <Content Include="App_Themes\Admin\Style.css" />
+    <Content Include="App_Themes\EasyUI\easyui.css" />
+    <Content Include="App_Themes\EasyUI\images\accordion_collapse.png" />
+    <Content Include="App_Themes\EasyUI\images\accordion_expand.png" />
+    <Content Include="App_Themes\EasyUI\images\alipay_btn.png" />
+    <Content Include="App_Themes\EasyUI\images\blank.gif" />
+    <Content Include="App_Themes\EasyUI\images\button_a_bg.gif" />
+    <Content Include="App_Themes\EasyUI\images\button_plain_hover.png" />
+    <Content Include="App_Themes\EasyUI\images\button_span_bg.gif" />
+    <Content Include="App_Themes\EasyUI\images\calendar_nextmonth.gif" />
+    <Content Include="App_Themes\EasyUI\images\calendar_nextyear.gif" />
+    <Content Include="App_Themes\EasyUI\images\calendar_prevmonth.gif" />
+    <Content Include="App_Themes\EasyUI\images\calendar_prevyear.gif" />
+    <Content Include="App_Themes\EasyUI\images\combo_arrow.gif" />
+    <Content Include="App_Themes\EasyUI\images\combo_arrow_new.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_header_bg.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_row_collapse.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_row_expand.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_sort_asc.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_sort_desc.gif" />
+    <Content Include="App_Themes\EasyUI\images\datagrid_title_bg.png" />
+    <Content Include="App_Themes\EasyUI\images\datebox_arrow.png" />
+    <Content Include="App_Themes\EasyUI\images\hecheng.png" />
+    <Content Include="App_Themes\EasyUI\images\layout_button_down.gif" />
+    <Content Include="App_Themes\EasyUI\images\layout_button_left.gif" />
+    <Content Include="App_Themes\EasyUI\images\layout_button_right.gif" />
+    <Content Include="App_Themes\EasyUI\images\layout_button_up.gif" />
+    <Content Include="App_Themes\EasyUI\images\menu.gif" />
+    <Content Include="App_Themes\EasyUI\images\menu_downarrow.png" />
+    <Content Include="App_Themes\EasyUI\images\menu_rightarrow.png" />
+    <Content Include="App_Themes\EasyUI\images\menu_rightarrow_white.png" />
+    <Content Include="App_Themes\EasyUI\images\menu_sep.png" />
+    <Content Include="App_Themes\EasyUI\images\menu_split_downarrow.png" />
+    <Content Include="App_Themes\EasyUI\images\messager_error.gif" />
+    <Content Include="App_Themes\EasyUI\images\messager_info.gif" />
+    <Content Include="App_Themes\EasyUI\images\messager_question.gif" />
+    <Content Include="App_Themes\EasyUI\images\messager_warning.gif" />
+    <Content Include="App_Themes\EasyUI\images\pagination_first.gif" />
+    <Content Include="App_Themes\EasyUI\images\pagination_last.gif" />
+    <Content Include="App_Themes\EasyUI\images\pagination_load.png" />
+    <Content Include="App_Themes\EasyUI\images\pagination_loading.gif" />
+    <Content Include="App_Themes\EasyUI\images\pagination_next.gif" />
+    <Content Include="App_Themes\EasyUI\images\pagination_prev.gif" />
+    <Content Include="App_Themes\EasyUI\images\panel_loading.gif" />
+    <Content Include="App_Themes\EasyUI\images\panel_title.png" />
+    <Content Include="App_Themes\EasyUI\images\panel_tools.gif" />
+    <Content Include="App_Themes\EasyUI\images\panel_tool_collapse.gif" />
+    <Content Include="App_Themes\EasyUI\images\panel_tool_expand.gif" />
+    <Content Include="App_Themes\EasyUI\images\pro_Simg.jpg" />
+    <Content Include="App_Themes\EasyUI\images\searchbox_button.png" />
+    <Content Include="App_Themes\EasyUI\images\slider_handle.png" />
+    <Content Include="App_Themes\EasyUI\images\spinner_arrow_down.gif" />
+    <Content Include="App_Themes\EasyUI\images\spinner_arrow_up.gif" />
+    <Content Include="App_Themes\EasyUI\images\table_add.png" />
+    <Content Include="App_Themes\EasyUI\images\table_delete.png" />
+    <Content Include="App_Themes\EasyUI\images\table_row_delete.png" />
+    <Content Include="App_Themes\EasyUI\images\table_row_insert.png" />
+    <Content Include="App_Themes\EasyUI\images\tabs_active.png" />
+    <Content Include="App_Themes\EasyUI\images\tabs_close.gif" />
+    <Content Include="App_Themes\EasyUI\images\tabs_enabled.png" />
+    <Content Include="App_Themes\EasyUI\images\tabs_leftarrow.png" />
+    <Content Include="App_Themes\EasyUI\images\tabs_rightarrow.png" />
+    <Content Include="App_Themes\EasyUI\images\tab_bg1.png" />
+    <Content Include="App_Themes\EasyUI\images\tab_bg2.png" />
+    <Content Include="App_Themes\EasyUI\images\tab_ul_bg.png" />
+    <Content Include="App_Themes\EasyUI\images\tree_arrows.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_checkbox_0.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_checkbox_1.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_checkbox_2.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_dnd_no.png" />
+    <Content Include="App_Themes\EasyUI\images\tree_dnd_yes.png" />
+    <Content Include="App_Themes\EasyUI\images\tree_elbow.png" />
+    <Content Include="App_Themes\EasyUI\images\tree_file.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_folder.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_folder_open.gif" />
+    <Content Include="App_Themes\EasyUI\images\tree_loading.gif" />
+    <Content Include="App_Themes\EasyUI\images\validatebox_pointer.gif" />
+    <Content Include="App_Themes\EasyUI\images\validatebox_warning.png" />
+    <Content Include="App_Themes\EasyUI\images\复件 button_a_bg.gif" />
+    <Content Include="App_Themes\EasyUI\images\复件 button_span_bg.gif" />
+    <Content Include="App_Themes\Icons\icon.css" />
+    <Content Include="App_Themes\Icons\icons\addbookmark.png" />
+    <Content Include="App_Themes\Icons\icons\addOrder.png" />
+    <Content Include="App_Themes\Icons\icons\ask_icon.png" />
+    <Content Include="App_Themes\Icons\icons\attachment.png" />
+    <Content Include="App_Themes\Icons\icons\back.png" />
+    <Content Include="App_Themes\Icons\icons\batchAddOrder.png" />
+    <Content Include="App_Themes\Icons\icons\batchDeleteOrder.png" />
+    <Content Include="App_Themes\Icons\icons\blank.gif" />
+    <Content Include="App_Themes\Icons\icons\boxin.png" />
+    <Content Include="App_Themes\Icons\icons\boxout.png" />
+    <Content Include="App_Themes\Icons\icons\cancel.png" />
+    <Content Include="App_Themes\Icons\icons\cancelgoods.png" />
+    <Content Include="App_Themes\Icons\icons\cancelOrder.png" />
+    <Content Include="App_Themes\Icons\icons\cart.png" />
+    <Content Include="App_Themes\Icons\icons\changegood.png" />
+    <Content Include="App_Themes\Icons\icons\checked.gif" />
+    <Content Include="App_Themes\Icons\icons\close.png" />
+    <Content Include="App_Themes\Icons\icons\CompletedYes.png" />
+    <Content Include="App_Themes\Icons\icons\cross.png" />
+    <Content Include="App_Themes\Icons\icons\cut.png" />
+    <Content Include="App_Themes\Icons\icons\default.png" />
+    <Content Include="App_Themes\Icons\icons\delete1.png" />
+    <Content Include="App_Themes\Icons\icons\delete2.png" />
+    <Content Include="App_Themes\Icons\icons\deletemark.png" />
+    <Content Include="App_Themes\Icons\icons\deleteOrder.png" />
+    <Content Include="App_Themes\Icons\icons\downbasket.png" />
+    <Content Include="App_Themes\Icons\icons\down_no.png" />
+    <Content Include="App_Themes\Icons\icons\down_sel.png" />
+    <Content Include="App_Themes\Icons\icons\d_upload.gif" />
+    <Content Include="App_Themes\Icons\icons\editOrder.png" />
+    <Content Include="App_Themes\Icons\icons\edit_add.png" />
+    <Content Include="App_Themes\Icons\icons\edit_remove.png" />
+    <Content Include="App_Themes\Icons\icons\email.png" />
+    <Content Include="App_Themes\Icons\icons\excel.png" />
+    <Content Include="App_Themes\Icons\icons\exp_icon.gif" />
+    <Content Include="App_Themes\Icons\icons\filesave.png" />
+    <Content Include="App_Themes\Icons\icons\hecheng.png" />
+    <Content Include="App_Themes\Icons\icons\help.png" />
+    <Content Include="App_Themes\Icons\icons\icon-delete-1.png" />
+    <Content Include="App_Themes\Icons\icons\icon1-add.png" />
+    <Content Include="App_Themes\Icons\icons\icon_gbook.png" />
+    <Content Include="App_Themes\Icons\icons\icon_menu.png" />
+    <Content Include="App_Themes\Icons\icons\icon_msg2.gif" />
+    <Content Include="App_Themes\Icons\icons\images.png" />
+    <Content Include="App_Themes\Icons\icons\inhouse.png" />
+    <Content Include="App_Themes\Icons\icons\kc_icon.png" />
+    <Content Include="App_Themes\Icons\icons\lock.png" />
+    <Content Include="App_Themes\Icons\icons\mini_add.png" />
+    <Content Include="App_Themes\Icons\icons\mini_edit.png" />
+    <Content Include="App_Themes\Icons\icons\mini_refresh.png" />
+    <Content Include="App_Themes\Icons\icons\money.png" />
+    <Content Include="App_Themes\Icons\icons\moneyDelete.png" />
+    <Content Include="App_Themes\Icons\icons\msg_err.gif" />
+    <Content Include="App_Themes\Icons\icons\msg_ok.gif" />
+    <Content Include="App_Themes\Icons\icons\new\hecheng.png" />
+    <Content Include="App_Themes\Icons\icons\new\上传图片.png" />
+    <Content Include="App_Themes\Icons\icons\new\上架.png" />
+    <Content Include="App_Themes\Icons\icons\new\下架.png" />
+    <Content Include="App_Themes\Icons\icons\new\付款.png" />
+    <Content Include="App_Themes\Icons\icons\new\保存.png" />
+    <Content Include="App_Themes\Icons\icons\new\入库.png" />
+    <Content Include="App_Themes\Icons\icons\new\全部展开.png" />
+    <Content Include="App_Themes\Icons\icons\new\全部收起.png" />
+    <Content Include="App_Themes\Icons\icons\new\关闭.png" />
+    <Content Include="App_Themes\Icons\icons\new\出库.png" />
+    <Content Include="App_Themes\Icons\icons\new\刷新.png" />
+    <Content Include="App_Themes\Icons\icons\new\单据转换.png" />
+    <Content Include="App_Themes\Icons\icons\new\发货.png" />
+    <Content Include="App_Themes\Icons\icons\new\同步.png" />
+    <Content Include="App_Themes\Icons\icons\new\审核.png" />
+    <Content Include="App_Themes\Icons\icons\new\导入.png" />
+    <Content Include="App_Themes\Icons\icons\new\导出.png" />
+    <Content Include="App_Themes\Icons\icons\new\屏幕.png" />
+    <Content Include="App_Themes\Icons\icons\new\帮助.png" />
+    <Content Include="App_Themes\Icons\icons\new\打印.png" />
+    <Content Include="App_Themes\Icons\icons\new\批量删除.png" />
+    <Content Include="App_Themes\Icons\icons\new\批量授权品牌.png" />
+    <Content Include="App_Themes\Icons\icons\new\批量生成订单.png" />
+    <Content Include="App_Themes\Icons\icons\new\拆箱.png" />
+    <Content Include="App_Themes\Icons\icons\new\拣货.png" />
+    <Content Include="App_Themes\Icons\icons\new\换货.png" />
+    <Content Include="App_Themes\Icons\icons\new\提示.png" />
+    <Content Include="App_Themes\Icons\icons\new\搜索.png" />
+    <Content Include="App_Themes\Icons\icons\new\撤销.png" />
+    <Content Include="App_Themes\Icons\icons\new\新增.png" />
+    <Content Include="App_Themes\Icons\icons\new\新增标签.png" />
+    <Content Include="App_Themes\Icons\icons\new\标记失败.png" />
+    <Content Include="App_Themes\Icons\icons\new\短信.png" />
+    <Content Include="App_Themes\Icons\icons\new\确认.png" />
+    <Content Include="App_Themes\Icons\icons\new\结算.png" />
+    <Content Include="App_Themes\Icons\icons\new\统计.png" />
+    <Content Include="App_Themes\Icons\icons\new\编辑.png" />
+    <Content Include="App_Themes\Icons\icons\new\装箱.png" />
+    <Content Include="App_Themes\Icons\icons\new\解锁.png" />
+    <Content Include="App_Themes\Icons\icons\new\警告.png" />
+    <Content Include="App_Themes\Icons\icons\new\设置.png" />
+    <Content Include="App_Themes\Icons\icons\new\货款.png" />
+    <Content Include="App_Themes\Icons\icons\new\购物车.png" />
+    <Content Include="App_Themes\Icons\icons\new\返回.png" />
+    <Content Include="App_Themes\Icons\icons\new\退款.png" />
+    <Content Include="App_Themes\Icons\icons\new\退货.png" />
+    <Content Include="App_Themes\Icons\icons\new\邮件.png" />
+    <Content Include="App_Themes\Icons\icons\new\锁定.png" />
+    <Content Include="App_Themes\Icons\icons\new\附件图标.png" />
+    <Content Include="App_Themes\Icons\icons\no.png" />
+    <Content Include="App_Themes\Icons\icons\ok.png" />
+    <Content Include="App_Themes\Icons\icons\orderchange.png" />
+    <Content Include="App_Themes\Icons\icons\outwarehouse.png" />
+    <Content Include="App_Themes\Icons\icons\pencil.png" />
+    <Content Include="App_Themes\Icons\icons\picking.png" />
+    <Content Include="App_Themes\Icons\icons\print.png" />
+    <Content Include="App_Themes\Icons\icons\redo.png" />
+    <Content Include="App_Themes\Icons\icons\reload.png" />
+    <Content Include="App_Themes\Icons\icons\screen.png" />
+    <Content Include="App_Themes\Icons\icons\search.png" />
+    <Content Include="App_Themes\Icons\icons\sendgoods.png" />
+    <Content Include="App_Themes\Icons\icons\setting.png" />
+    <Content Include="App_Themes\Icons\icons\shoppingcar.png" />
+    <Content Include="App_Themes\Icons\icons\sms.png" />
+    <Content Include="App_Themes\Icons\icons\statistics.png" />
+    <Content Include="App_Themes\Icons\icons\sum.png" />
+    <Content Include="App_Themes\Icons\icons\synchronization.png" />
+    <Content Include="App_Themes\Icons\icons\tagfail.png" />
+    <Content Include="App_Themes\Icons\icons\tip.png" />
+    <Content Include="App_Themes\Icons\icons\unchecked.gif" />
+    <Content Include="App_Themes\Icons\icons\undo.png" />
+    <Content Include="App_Themes\Icons\icons\unlock.png" />
+    <Content Include="App_Themes\Icons\icons\upbasket.png" />
+    <Content Include="App_Themes\Icons\icons\up_no.png" />
+    <Content Include="App_Themes\Icons\icons\up_sel.png" />
+    <Content Include="App_Themes\Icons\icons\warning.gif" />
+    <Content Include="App_Themes\Icons\icons\warrant.png" />
+    <Content Include="App_Themes\Site\common.css" />
+    <Content Include="App_Themes\Site\Contact.css" />
+    <Content Include="App_Themes\Site\global.css" />
+    <Content Include="App_Themes\Site\images\bg.png" />
+    <Content Include="App_Themes\Site\images\bg1.png" />
+    <Content Include="App_Themes\Site\images\footer-bg.gif" />
+    <Content Include="App_Themes\Site\images\footer-bg.png" />
+    <Content Include="App_Themes\Site\images\header-bg.png" />
+    <Content Include="App_Themes\Site\images\img.png" />
+    <Content Include="App_Themes\Site\images\join.png" />
+    <Content Include="App_Themes\Site\index.css" />
+    <Content Include="App_Themes\Site\layout.css" />
+    <Content Include="App_Themes\Site\images\main-bg.jpg" />
+    <Content Include="App_Themes\Site\images\nivo-arrows.png" />
+    <Content Include="App_Themes\Site\images\nivo-bullets.png" />
+    <Content Include="App_Themes\Site\images\nivo-loading.gif" />
+    <Content Include="App_Themes\Site\images\notice.jpg" />
+    <Content Include="App_Themes\Site\images\rl-bj.gif" />
+    <Content Include="App_Themes\Site\images\sidebar-box-body.png" />
+    <Content Include="App_Themes\Site\images\sidebar-box-footer.png" />
+    <Content Include="App_Themes\Site\member.css" />
+    <Content Include="App_Themes\Site\News-list.css" />
+    <Content Include="App_Themes\Site\nivo-slider.css" />
+    <Content Include="App_Themes\Site\Register.css" />
+    <Content Include="App_Themes\Site\Style.css" />
+    <Content Include="App_Themes\Site\validate.css" />
+    <Content Include="App_Themes\Site\Weaker-list.css" />
+    <Content Include="App_Themes\Site\wish-list.css" />
+    <Content Include="App_Themes\Site\Wish.css" />
+    <Content Include="App_Themes\zTree\img\diy\1_close.png" />
+    <Content Include="App_Themes\zTree\img\diy\1_open.png" />
+    <Content Include="App_Themes\zTree\img\diy\2.png" />
+    <Content Include="App_Themes\zTree\img\diy\3.png" />
+    <Content Include="App_Themes\zTree\img\diy\4.png" />
+    <Content Include="App_Themes\zTree\img\diy\5.png" />
+    <Content Include="App_Themes\zTree\img\diy\6.png" />
+    <Content Include="App_Themes\zTree\img\diy\7.png" />
+    <Content Include="App_Themes\zTree\img\diy\8.png" />
+    <Content Include="App_Themes\zTree\img\diy\9.png" />
+    <Content Include="App_Themes\zTree\img\line_conn.gif" />
+    <Content Include="App_Themes\zTree\img\loading.gif" />
+    <Content Include="App_Themes\zTree\img\zTreeStandard.gif" />
+    <Content Include="App_Themes\zTree\img\zTreeStandard.png" />
+    <Content Include="App_Themes\zTree\zTreeStyle.css" />
+    <Content Include="Content\images\2013052109391215.jpg" />
+    <Content Include="Content\images\begin.gif" />
+    <Content Include="Content\images\building1.jpg" />
+    <Content Include="Content\images\close.gif" />
+    <Content Include="Content\images\default.jpg" />
+    <Content Include="Content\images\DSCF0194.jpg" />
+    <Content Include="Content\images\DSCF0203.jpg" />
+    <Content Include="Content\images\DSCF0208.jpg" />
+    <Content Include="Content\images\DSCF0215.jpg" />
+    <Content Include="Content\images\finish.gif" />
+    <Content Include="Content\images\going.gif" />
+    <Content Include="Content\images\Head1.jpg" />
+    <Content Include="Content\images\Head2.jpg" />
+    <Content Include="Content\images\Head3.jpg" />
+    <Content Include="Content\images\Head4.jpg" />
+    <Content Include="Content\images\Head5.jpg" />
+    <Content Include="Content\images\header-picture.jpg" />
+    <Content Include="Content\images\heart.png" />
+    <Content Include="Content\images\rl-guan.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Plugins\artDialog\artDialog.js" />
+    <Content Include="Plugins\artDialog\artDialog.source.js" />
+    <Content Include="Plugins\artDialog\jquery.artDialog.js" />
+    <Content Include="Plugins\artDialog\jquery.artDialog.source.js" />
+    <Content Include="Plugins\artDialog\plugins\iframeTools.js" />
+    <Content Include="Plugins\artDialog\plugins\iframeTools.source.js" />
+    <Content Include="Plugins\artDialog\skins\aero.css" />
+    <Content Include="Plugins\artDialog\skins\aero\aero_s.png" />
+    <Content Include="Plugins\artDialog\skins\aero\aero_s2.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_close.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_e.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_n.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_ne.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_nw.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_s.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_se.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_sw.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_title_icon.png" />
+    <Content Include="Plugins\artDialog\skins\aero\ie6\aui_w.png" />
+    <Content Include="Plugins\artDialog\skins\black.css" />
+    <Content Include="Plugins\artDialog\skins\black\bg.png" />
+    <Content Include="Plugins\artDialog\skins\black\bg2.png" />
+    <Content Include="Plugins\artDialog\skins\black\bg_css3.png" />
+    <Content Include="Plugins\artDialog\skins\black\bg_css3_2.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\close.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\e.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\n.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\ne.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\nw.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\s.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\se.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\sw.png" />
+    <Content Include="Plugins\artDialog\skins\black\ie6\w.png" />
+    <Content Include="Plugins\artDialog\skins\blue.css" />
+    <Content Include="Plugins\artDialog\skins\blue\bg.png" />
+    <Content Include="Plugins\artDialog\skins\blue\bg2.png" />
+    <Content Include="Plugins\artDialog\skins\blue\bg_css3.png" />
+    <Content Include="Plugins\artDialog\skins\blue\bg_css3_2.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\close.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\e.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\n.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\ne.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\nw.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\s.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\se.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\sw.png" />
+    <Content Include="Plugins\artDialog\skins\blue\ie6\w.png" />
+    <Content Include="Plugins\artDialog\skins\chrome.css" />
+    <Content Include="Plugins\artDialog\skins\chrome\border.png" />
+    <Content Include="Plugins\artDialog\skins\chrome\chrome_s.png" />
+    <Content Include="Plugins\artDialog\skins\default.css" />
+    <Content Include="Plugins\artDialog\skins\green.css" />
+    <Content Include="Plugins\artDialog\skins\green\bg.png" />
+    <Content Include="Plugins\artDialog\skins\green\bg2.png" />
+    <Content Include="Plugins\artDialog\skins\green\bg_css3.png" />
+    <Content Include="Plugins\artDialog\skins\green\bg_css3_2.png" />
+    <Content Include="Plugins\artDialog\skins\green\color_bg.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\close.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\e.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\n.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\ne.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\nw.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\s.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\se.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\sw.png" />
+    <Content Include="Plugins\artDialog\skins\green\ie6\w.png" />
+    <Content Include="Plugins\artDialog\skins\icons\error.png" />
+    <Content Include="Plugins\artDialog\skins\icons\face-sad.png" />
+    <Content Include="Plugins\artDialog\skins\icons\face-smile.png" />
+    <Content Include="Plugins\artDialog\skins\icons\loading.gif" />
+    <Content Include="Plugins\artDialog\skins\icons\question.png" />
+    <Content Include="Plugins\artDialog\skins\icons\succeed.png" />
+    <Content Include="Plugins\artDialog\skins\icons\warning.png" />
+    <Content Include="Plugins\artDialog\skins\idialog.css" />
+    <Content Include="Plugins\artDialog\skins\idialog\idialog_s.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\idialog_s2.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_close.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_e.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_n.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_ne.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_nw.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_s.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_se.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_sw.png" />
+    <Content Include="Plugins\artDialog\skins\idialog\ie6\aui_w.png" />
+    <Content Include="Plugins\artDialog\skins\opera.css" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_close.hover.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_close.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_e.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_n.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_ne.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_nw.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_s.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_se.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_sw.png" />
+    <Content Include="Plugins\artDialog\skins\opera\ie6\aui_w.png" />
+    <Content Include="Plugins\artDialog\skins\opera\s1.png" />
+    <Content Include="Plugins\artDialog\skins\opera\s2.png" />
+    <Content Include="Plugins\artDialog\skins\simple.css" />
+    <Content Include="Plugins\artDialog\skins\twitter.css" />
+    <Content Include="Plugins\uploadify\cancel.png" />
+    <Content Include="Plugins\uploadify\del.png" />
+    <Content Include="Plugins\uploadify\delete.png" />
+    <Content Include="Plugins\uploadify\expressInstall.swf" />
+    <Content Include="Plugins\uploadify\jquery.js" />
+    <Content Include="Plugins\uploadify\jquery.uploadify.js" />
+    <Content Include="Plugins\uploadify\jquery.uploadify.v2.1.4.js" />
+    <Content Include="Plugins\uploadify\swfobject.js" />
+    <Content Include="Plugins\uploadify\upAttachment.gif" />
+    <Content Include="Plugins\uploadify\UpImg.gif" />
+    <Content Include="Plugins\uploadify\upload.GIF" />
+    <Content Include="Plugins\uploadify\uploadify.allglyphs.swf" />
+    <Content Include="Plugins\uploadify\uploadify.css" />
+    <Content Include="Plugins\uploadify\uploadify.swf" />
+    <Content Include="Plugins\uploadify\副本 jquery.uploadify.v2.1.4.js" />
+    <Content Include="Plugins\WDatePicker\calendar.js" />
+    <Content Include="Plugins\WDatePicker\config.js" />
+    <Content Include="Plugins\WDatePicker\lang\en.js" />
+    <Content Include="Plugins\WDatePicker\lang\zh-cn.js" />
+    <Content Include="Plugins\WDatePicker\lang\zh-tw.js" />
+    <Content Include="Plugins\WDatePicker\My97DatePicker.htm" />
+    <Content Include="Plugins\WDatePicker\skin\datePicker.gif" />
+    <Content Include="Plugins\WDatePicker\skin\default\datepicker.css" />
+    <Content Include="Plugins\WDatePicker\skin\default\img.gif" />
+    <Content Include="Plugins\WDatePicker\skin\WdatePicker.css" />
+    <Content Include="Plugins\WDatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Plugins\WDatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Plugins\WDatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Plugins\WDatePicker\WdatePicker.js" />
+    <Content Include="Plugins\xheditor\xheditor-1.1.14-zh-cn.min.js" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\angry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\awkward.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\bye.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\config.txt" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\crazy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\cry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\curse.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\cute.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\despise.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\doubt.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\envy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\fastcry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\knock.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\laugh.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\mad.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\ohmy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\panic.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\proud.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\quiet.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\sad.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\shutup.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\shy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\sleep.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\smile.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\struggle.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\titter.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\tongue.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\wail.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\default\wronged.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\alien.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\angel.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\angry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\bandit.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\biglaugh.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\blink.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\blush.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\config.txt" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\cool.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\cry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\depres.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\devil.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\glare.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\heart.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\joyful.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\kiss.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\laugh.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\magician.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\ninja.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\pinch.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\police.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\sad.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\sick.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\sideways.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\sleep.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\smile.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\surprised.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\tongue.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\unsure.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\w00t.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\whistling.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\wondering.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\ipb\wub.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\1.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\10.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\11.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\12.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\13.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\14.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\15.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\16.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\17.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\18.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\19.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\2.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\20.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\21.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\22.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\23.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\24.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\25.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\26.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\27.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\28.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\29.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\3.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\30.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\31.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\32.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\33.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\34.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\35.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\36.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\37.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\38.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\39.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\4.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\40.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\5.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\6.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\7.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\8.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\msn\9.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\angry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\bad.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\blush.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\brokenheart.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\bye.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\coffee.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\config.txt" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\cool.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\cry.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\curse.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\cute.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\devil.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\envy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\gift.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\good.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\kiss.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\laugh.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\love.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\music.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\question.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\rose.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\sad.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\shocked.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\shout.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\sick.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\sleepy.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\smile.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\soccer.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\sweat.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\tired.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\tongue.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\victory.gif" />
+    <Content Include="Plugins\xheditor\xheditor_emot\pidgin\wink.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\add.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\bg1.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\bg2.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\btnbg.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\btnbgr.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\clear.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\progressbg.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\img\start.gif" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\multiupload.css" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\multiupload.html" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\multiupload.js" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\swfupload\swfupload.js" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\multiupload\swfupload\swfupload.swf" />
+    <Content Include="Plugins\xheditor\xheditor_plugins\ubb.min.js" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\iframe.css" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\close.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\flash.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\icons.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\loading.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\progress.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\progressbg.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-address.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-div.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h1.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h2.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h3.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h4.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h5.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-h6.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-p.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\tag-pre.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\waiting.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\img\wmp.gif" />
+    <Content Include="Plugins\xheditor\xheditor_skin\default\ui.css" />
+    <Content Include="Scripts\body.js" />
+    <Content Include="Scripts\bodyAjax.js" />
+    <Content Include="Scripts\Cookies.js" />
+    <Content Include="Scripts\DataGridExtend.js" />
+    <Content Include="Scripts\easing.js" />
+    <Content Include="Scripts\Form.js" />
+    <Content Include="Scripts\HammerEasyGrid.js" />
+    <Content Include="Scripts\imgpreview.js" />
+    <Content Include="Scripts\jquery-dropdown.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.0.4-packed.js" />
+    <Content Include="Scripts\jquery.easing.js" />
+    <Content Include="Scripts\jquery.easyui.js" />
+    <Content Include="Scripts\jquery.elastislide.js" />
+    <Content Include="Scripts\Jquery.idTabs.js" />
+    <Content Include="Scripts\JQuery.js" />
+    <Content Include="Scripts\jquery.lavalamp.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.ztree.all-3.2.min.js" />
+    <Content Include="Scripts\jquery.ztree.all-3.5.js" />
+    <Content Include="Scripts\jquerypp.custom.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\loadmask.min.js" />
+    <Content Include="Scripts\modernizr.custom.17475.js" />
+    <Content Include="Scripts\mousewheel.js" />
+    <Content Include="Scripts\pop.js" />
+    <Content Include="Scripts\rhinoslider-1.05.min.js" />
+    <Content Include="Scripts\validate.js" />
+    <Content Include="Scripts\WdatePicker.js" />
+    <Content Include="Scripts\Windows.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\MyAccount\Models\" />
+    <Folder Include="Areas\MyAccount\Views\Shared\" />
+    <Folder Include="Content\images\201401\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_SiteLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <None Include="App_Themes\EasyUI\images\Thumbs.db" />
+    <None Include="App_Themes\Icons\icons\new\hecheng.psd" />
+    <Content Include="Areas\Admin\Views\Home\Top.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Left.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Middle.cshtml" />
+    <Content Include="Areas\Admin\Views\Wish\WishView.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\AddMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\EditMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\MenuList.cshtml" />
+    <Content Include="Areas\Admin\Views\Wish\AddWishView.cshtml" />
+    <Content Include="Areas\Admin\Views\Wish\EditWishView.cshtml" />
+    <Content Include="Areas\Admin\Views\Wish\WaitWishView.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\UserListView.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\EditUserView.cshtml" />
+    <Content Include="Areas\Admin\Views\Wish\TransferWishView.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsManage\NewsAddView.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsManage\NewsListView.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsManage\NewsEditView.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Web.config" />
+    <Content Include="Areas\MyAccount\Views\Wish\WishListView.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\AccountMenuView.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Home\Index.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Home\Top.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Home\Left.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Home\Middle.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Wish\AddWishView.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Wish\EditWishView.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Wish\AlreadyApplyWishView.cshtml" />
+    <Content Include="Areas\MyAccount\Views\Settings\Profile.cshtml" />
+    <None Include="Plugins\uploadify\com\adobe\air\logging\FileTarget.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\HMAC.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\MD5.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\MD5Stream.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\SHA1.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\SHA224.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\SHA256.as" />
+    <None Include="Plugins\uploadify\com\adobe\crypto\WSSEUsernameToken.as" />
+    <None Include="Plugins\uploadify\com\adobe\errors\IllegalStateError.as" />
+    <None Include="Plugins\uploadify\com\adobe\fileformats\vcard\Address.as" />
+    <None Include="Plugins\uploadify\com\adobe\fileformats\vcard\Email.as" />
+    <None Include="Plugins\uploadify\com\adobe\fileformats\vcard\Phone.as" />
+    <None Include="Plugins\uploadify\com\adobe\fileformats\vcard\VCard.as" />
+    <None Include="Plugins\uploadify\com\adobe\fileformats\vcard\VCardParser.as" />
+    <None Include="Plugins\uploadify\com\adobe\images\BitString.as" />
+    <None Include="Plugins\uploadify\com\adobe\images\JPGEncoder.as" />
+    <None Include="Plugins\uploadify\com\adobe\images\PNGEncoder.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\DynamicURLLoader.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\IURIResolver.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\MimeTypeMap.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\proxies\RFC2817Socket.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\URI.as" />
+    <None Include="Plugins\uploadify\com\adobe\net\URIEncodingBitmap.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\Database.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\Definition.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\Dict.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\DictionaryServer.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\ConnectedEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\DatabaseEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\DefinitionEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\DefinitionHeaderEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\DictionaryServerEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\DisconnectedEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\ErrorEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\MatchEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\MatchStrategiesEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\events\NoMatchEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\MatchStrategy.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\Response.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\util\CompleteResponseEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\protocols\dict\util\SocketHelper.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSON.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONDecoder.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONEncoder.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONParseError.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONToken.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONTokenizer.as" />
+    <None Include="Plugins\uploadify\com\adobe\serialization\json\JSONTokenType.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\ArrayUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\DateUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\DictionaryUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\IntUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\NumberFormatter.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\StringUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\utils\XMLUtil.as" />
+    <None Include="Plugins\uploadify\com\adobe\webapis\events\ServiceEvent.as" />
+    <None Include="Plugins\uploadify\com\adobe\webapis\ServiceBase.as" />
+    <None Include="Plugins\uploadify\com\adobe\webapis\URLLoaderBase.as" />
+    <None Include="Properties\PublishProfiles\Main.pubxml" />
+    <Content Include="Views\Control\MenuTreeView.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\WishList.cshtml" />
+    <Content Include="Views\Home\Wish.cshtml" />
+    <Content Include="Views\Home\WeakerList.cshtml" />
+    <Content Include="Views\Home\Weaker.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{6184ED60-827F-4B7D-AB63-0C4D585602B0}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53143</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

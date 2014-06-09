@@ -1,0 +1,139 @@
+﻿#container
+{
+	overflow: hidden;
+}
+#container #nav
+{
+	padding: 20px 20px 10px 20px;
+	margin: 10px 0;
+	list-style: none;
+	border: #e6e6e6 1px solid;
+	width: 948px;
+	position: relative;
+}
+#container #nav *
+{
+	text-align: left;
+}
+#container #nav li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+	list-style: none;
+	line-height: 25px;
+}
+#container #nav li a
+{
+	display: inline-block;
+	padding: 0 10px;
+	white-space: nowrap;
+}
+#container #nav li a.current
+{
+	display: inline-block;
+	color: #FFF;
+	font-weight: bold;
+	background: #47b200;
+	text-decoration: none;
+}
+#container #nav li.town
+{
+	border: #e6e6e6 1px solid;
+	padding: 8px 35px;
+	margin-bottom: 0;
+	background: #f9f9fb;
+}
+#container #nav #wish
+{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 0;
+	margin: 0;
+	width: 179px;
+	height: 44px;
+	background: url(images/img.png) -710px -121px no-repeat;
+}
+#container #nav #wish a
+{
+	width: 179px;
+	height: 44px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+#container #nav #wish a:hover
+{
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#container #example
+{
+	padding: 0;
+	margin: 0;
+	width: 1010px;
+}
+#container #example *
+{
+	text-align: left;
+}
+#container #example li
+{
+	padding: 19px;
+	margin: 0 10px 10px 0;
+	list-style: none;
+	border: #e6e6e6 1px solid;
+	width: 450px;
+	height: 130px;
+	float: left;
+	text-align: left;
+	position: relative;
+}
+#container #example li img
+{
+	float: left;
+}
+#container #example li dl
+{
+	float: right;
+}
+#container #example li dl, #container #example li dt, #container #example li dd
+{
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+#container #example li dt a
+{
+	font-size: 20px;
+	color: #47b200;
+}
+#container #example li dd
+{
+	line-height: 20px;
+	color: #333;
+	word-spacing: 20px;
+}
+#container #example li dd a
+{
+	color: #333;
+	display: inline-block;
+	margin-right: 10px;
+}
+#container #example li dd.describe
+{
+	height: 50px;
+	color: #999;
+}
+#container #example li dd.flag
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 56px;
+	height: 56px;
+}
+.page
+{
+	margin-bottom: 20px;
+}

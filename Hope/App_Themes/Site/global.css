@@ -1,0 +1,251 @@
+﻿*{
+	font-size:12px;
+	font-family:"Microsoft YaHei","Hiragino Sans GB",Tahoma,sans-serif;
+	color:#666;
+	}
+* a{
+	font-size:12px;
+	color:#666;
+	text-decoration:none;
+	}
+* a:hover{
+	font-size:12px;
+	color:#666;
+	text-decoration:underline;
+	}
+.left{
+	float:left;
+	}
+.right{
+	float:right;
+	}
+.claer{
+	clear:both;
+	}
+form{
+	margin:0;
+	padding:0;
+	text-align:left;
+	}
+img{
+	border:none;
+	}
+
+.page{
+	width:990px;
+	margin:10px auto;
+	clear:both;
+	}
+.page a{
+	display:inline-block;
+	min-width:15px;
+	height:35px;
+	padding:0 10px;
+	line-height:35px;
+	border:#e5e5e5 1px solid;
+	margin-right:3px;
+	color:#6fcc55;
+	font-weight:bold;
+	}
+.page .currentpage{
+	background:#47B200;
+	color:#FFF;
+	}
+	
+
+/* ---------- validate begin ----------*/
+label.error {margin-left:6px;color:#FF0000}
+input.error, textarea.error{border:1px #FF6600 solid; color:#FF0000}
+select.error{border:1px #FF6600 solid;}
+label.valid { background:url(../images/checkok.gif) no-repeat 0px 0px; padding-left: 16px;}
+.noshow label.valid{ width: 0px; padding: 0px; margin: 0px}
+.noshow {width: auto}
+/* ---------- validate end ----------*/
+
+
+
+/* ---------- imgpreview begin ----------*/
+#container .pre_box
+{
+}
+.pre_showbox, .pre_showimg
+{
+	width: 150px;
+	height: 150px;
+}
+.pre_file
+{
+    filter:alpha(opacity=30);
+    opacity: 0.3;
+    width: 90px;
+    height:20px;
+    cursor: pointer;
+}
+/* ---------- imgpreview end ----------*/
+
+
+
+/* ---------- dropdown_frame begin ----------*/
+#dropdown_frame
+{
+	float:left;
+	width:42px;
+	height:34px;
+	background:url(images/img.png) -260px -15px no-repeat;
+	line-height:34px;
+	cursor: pointer;
+}
+#dropdown_frame .dropdown_box
+{
+
+}
+#dropdown_frame .dropdown_left
+{
+
+}
+#dropdown_frame .dropdown_right
+{
+
+}
+#dropdown_frame ul, #dropdown_frame li
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#dropdown_frame ul
+{
+	border: solid 1px #dcdcdc;
+	width:42px;
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	background: white;
+	z-index: 999;
+	_margin-left:-31px;
+	*margin-left:-31px;
+}
+#dropdown_frame li
+{
+	line-height: 24px;
+	padding: 0 5px;
+}
+#dropdown_frame li:hover
+{
+	background: #f8f3f4;
+}
+/* ---------- dropdown_frame end ----------*/
+
+
+/*--------------------------------------[分享]--------------------------------------*/
+ #share{
+	float:right;
+	width:270px;
+	height:45px;
+	text-align:right;
+	margin: 15px 0 0 10px;
+	white-space:nowrap;
+	}
+
+ #share a
+{
+	width: 32px;
+	height:32px;
+	}
+#share span{
+	display:inline-block;
+	width: 32px;
+	text-align:left;
+}
+#share #bdshare{
+	float:none !important;
+	display:inline-block;
+	*display:inline;
+	_display:inline;
+	vertical-align:middle;
+	}
+	
+ #share .bds_tools_32 a 
+{
+    background:url(images/img.png);
+	margin:0 5px 0 0 !important;
+}
+ #share .bds_tsina {
+    background-position: -491px -0px !important;
+}
+ #share .bds_qzone{
+    background-position: -523px -0px !important;
+}
+ #share .bds_tqq {
+    background-position: -555px -0px !important;
+}
+ #share .bds_tqf {
+    background-position: -587px -0px !important;
+}
+ #share span.bds_more {
+	background:url(images/img.png) -619px -0px no-repeat !important;
+	height:32px !important;
+	padding:0 !important;
+}
+/*--------------------------------------[/分享]--------------------------------------*/
+
+/* ---------- pop begin ----------*/
+#pop_content,#popupContact{
+	background:#FFF;
+	border:3px solid #dfdfdf;
+	width:644px;
+	margin:165px auto;
+	}
+#pop_background
+{
+	background-color: #666666;
+	width: 100%;
+	height: 2000px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	z-index: 8;
+}
+#pop_content
+{
+	position: absolute;
+	display: none;
+	z-index: 9;
+	margin:0px auto;
+	}
+#pop_content dl,#pop_content dt,#pop_content dd{
+	margin:0;
+	padding:0;
+	}
+#pop_content dt{
+	text-align:right;
+	}
+#pop_content dt input{
+	border:none;
+	background:#FFF;
+	margin:10px 10px 0 0;
+	}
+/* ---------- pop end ----------*/
+#bdshare_l_c *{
+	text-align:left !important;
+	}
+
+#path .left a{
+	color: #167F39;
+	}
+#container .hide
+{
+	display: none;
+}
+#container .p_chk
+{
+	color: Red;
+	width: auto;
+}
+#container .error input,
+#container .error textarea,
+#container .error select
+{
+	border-color: Red;
+}

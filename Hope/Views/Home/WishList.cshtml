@@ -1,0 +1,51 @@
+﻿@model Hope.Models.SitePaginated<Hammer.Logic.Models.Wish>
+@{
+	ViewBag.Title = "心愿";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/wish-list.css" rel="stylesheet" type="text/css" />
+}
+<div id="container">
+	<!--------------------------------------[导航]-------------------------------------->
+	<ul id="nav">
+		<li>筛选： <a class="@ViewBag.A" href="/Home/WishList">全部</a> <a class="@ViewBag.B" href="/Home/WishList?status=1">
+			未认领</a> <a class="@ViewBag.C" href="/Home/WishList?status=2">进行中</a> <a class="@ViewBag.D" href="/Home/WishList?status=3">
+				已完成</a> </li>
+	</ul>
+	<ul id="example">
+		@foreach (var item in Model)
+  {
+			<li><a href="/Home/Wish/@item.ID">
+				<img src="/Content/Images/@item.PictureFile" width="130px"
+				height="130px" /></a>
+				<dl>
+					<!-- 心愿编号 -->
+					<span style="color: #ff7e00; font-weight: bold;">No.@item.ID</span>
+					<!-- /心愿编号 -->
+					<dt><a href="/Home/Wish/@item.ID">@item.Title</a></dt>
+					<dd class="describe">
+						@item.Description</dd>
+					<dd>
+						发起人：<a href="/home/Weaker/@item.UserID">@item.Name</a>
+					</dd>
+					<dd>
+						发起时间：@item.DateStart.ToString()</dd>
+					<dd class="flag">
+						@{
+	  string str = "";
+	  switch (item.Status)
+	  {
+		  case 1: str = "<img src='/content/images/begin.gif' />"; break;
+		  case 2: str = "<img src='/content/images/going.gif' />"; break;
+		  case 3: str = "<img src='/content/images/finish.gif' />"; break;
+	  }
+						}
+						@Html.Raw(str)
+					</dd>
+				</dl>
+			</li>
+  }
+	</ul>
+</div>
+@Model.Pager("pager")

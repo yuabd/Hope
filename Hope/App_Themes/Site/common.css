@@ -1,0 +1,108 @@
+﻿
+/*-------------------------------------------------------------------------*/
+#popupContact dl,#popupContact dt,#popupContact dd{
+	margin:0;
+	padding:0;
+	color:#000;
+	text-align:center;
+	}
+#popupContact dl{
+	padding:30px;
+	}
+#popupContact dt{
+	font-size:28px;
+	color:#000;
+	line-height:50px;
+	}
+#popupContact dd{
+	line-height:30px;
+	}
+#popupContact dd a{
+	color:#999;
+	text-decoration:none;
+	}
+#pop_content_body{
+	margin-bottom:30px;
+	}
+#pop_content_body dl,#pop_content_body dt,#pop_content_body dd{
+	margin:0;
+	padding:0;
+	text-align:left;
+	}
+#pop_content_body dl{
+	margin:0 30px;}
+#pop_content_body dt{
+	font-size:20px;
+	color:#000;
+	}
+#pop_content_body dd{
+	line-height:30px;
+	 margin: 10px 0;
+	}
+#container dl dd{
+	margin:10px 0;
+	
+	}
+#pop_content_body dd span{
+	width:120px;
+	display:inline-block;
+	text-align:left;
+	font-size:14px;
+	}	
+#pop_content_body dd input {
+    border: 1px solid #BEBEBE;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    margin-right: 10px;
+    text-align: left;
+    vertical-align: middle;
+    width: 168px;
+	padding:0 5px;
+}
+#pop_content_body dd textarea {
+    border: 1px solid #BEBEBE;
+    font-size: 14px;
+    height: 98px !important;
+    line-height: 38px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    text-align: left;
+    vertical-align: top;
+    width: 408px !important;
+}
+#pop_content_body dd input.admin_submit,#pop_content_body dd input.admin_cancel{
+	width:90px;
+	height:30px;
+	border:none;
+	background:url(images/img.png) right -151px no-repeat;
+	}
+#pop_content_body dd input.admin_submit:hover,#pop_content_body dd input.admin_cancel:hover{
+	filter:alpha(opacity=80);
+	opacity: 0.8
+	}
+#pop_content_body dd input.admin_cancel{
+	background:url(images/img.png) right -121px no-repeat;
+	}
+
+#pop_content_body dd input.admin_cancel:hover{
+	filter:alpha(opacity=80);
+	opacity: 0.8
+	}
+#pop_content_body h2{
+	font-size:20px;
+	color:#000;
+	text-align:center;
+	}
+#pop_content_body h3{
+	text-align:center;
+	font-size:14px;
+	color:#999;
+	font-weight:lighter;
+	}
+#pop_content_body h3 a{
+	text-align:center;
+	color:#47b200;
+	font-weight:lighter;
+	text-decoration:none;
+	}

@@ -1,0 +1,43 @@
+﻿@model Hammer.Logic.Models.News
+@{
+	ViewBag.Title = Model.Title;
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<style>
+		#path
+		{
+			width: 990px;
+			height: 60px;
+			margin: 0 auto 10px auto;
+			border-bottom: #dfdfdf 1px solid;
+		}
+		#path .left
+		{
+			line-height: 60px;
+			color: #167f39;
+		}
+		#container h1.title
+		{
+			color: Green;
+			font-size: large;
+		}
+		.content
+		{
+			float: left;
+		}
+	</style>
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href='/News'>新闻公告</a> > <a href="/News/Detail/@Model.ID">@Model.Title</a>
+	</div>
+</div>
+<div id="container">
+	<h1 class="title">@Model.Title</h1>
+	<p class="">
+		发布日期: @Model.DateCreated.ToString() 浏览量: @Model.Count</p>
+	<div class="content">
+		@Html.Raw(Model.Content)
+	</div>
+</div>

@@ -1,0 +1,180 @@
+﻿@model Hammer.Logic.Models.UserEntity
+@{
+	ViewBag.Title = "心愿发起人";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/member.css" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+	<script type="text/javascript">
+
+		// --------- support_add begin ---------
+		g_support = false;
+		function support_add() {
+
+			if (g_support)
+				return;
+
+			_span = $("#count_support");
+			_span.text(Number(_span.text()) + 1);
+			g_support = true;
+			$.U1Ajax("/Home/Support", { "id": "@Model.ID", "type": "user" }, function () {
+				g_support = true;
+			});
+		}
+
+		// --------- support_add end ---------
+	</script>
+	<script type="text/javascript" src="/Scripts/Jquery.idTabs.js"></script>
+	<script type="text/javascript">
+		$(".idTabs").idTabs("!mouseover");
+	</script>
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href='/Home/WeakerList'>用户列表</a> > <a href=''>@Model.UserName</a></div>
+</div>
+<div id="container">
+	<!--------------------------------------[左]-------------------------------------->
+	<div id="left">
+		<div id="info">
+			<a href="javascript:void(0);" class="left">
+				<img src="/content/images/@Model.HeadPicture" width="190px"
+					height="190px" /></a>
+			<dl class="left">
+				<dt>
+					<div>
+						<span>@Model.UserName</span><!-- <a href="spacecp.php">个人设置</a> --></div>
+				</dt>
+				<dd>
+					<ul>
+						<li><a>@Model.Publish</a>
+							<div>
+								发起</div>
+						</li>
+						<li><a>@Model.Apply</a>
+							<div>
+								帮助</div>
+						</li>
+						<li><a>@Model.Heart</a>
+							<div>
+								爱心数</div>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<div id="agree">
+				<a href="javascript:void(0);" onclick="support_add();">
+					<h1 id='count_support'>
+						@Model.Support</h1>
+					<h2>
+						顶一下</h2>
+				</a>
+			</div>
+		</div>
+		<!---------------------------------------------------------------------------->
+		<dl id="describe">
+			<dt>个人说明</dt>
+			<dd>
+				@Model.Description</dd>
+		</dl>
+		<!---------------------------------------------------------------------------->
+		<div class="idTabs">
+			<div class="title">
+				<a href="#listbox1">发起的心愿</a> <a href="#listbox2">认领的心愿</a></div>
+			<div class="items">
+				<dl id="listbox1" class="listbox">
+					<dd class="label">
+						<span class="topic">心愿名称</span> <span>认领人</span> <span>发起时间</span> <span>状态</span></dd>
+					@foreach (var item in ViewBag.Publish)
+	 {
+						<dd class="bg">
+							<span class="topic"><a href="/Home/Wish/@item.ID">@item.Title</a></span> <span><a href='/Home/Weaker/@item.ApplyUserID'>@item.ApplyUser</a></span>
+							<span>@item.DateStart.ToString("yyyy/MM/dd")</span> <span>@item.Status</span>
+						</dd>
+	 }
+					<div class="page">
+					</div>
+				</dl>
+				<dl id="listbox2" class="listbox people">
+					<dd class="label">
+						<span class="topic">心愿名称</span> <span>发起人</span> <span>发起时间</span> <span>状态</span>
+					</dd>
+					@foreach (var item in ViewBag.Apply)
+	 {
+						<dd class="bg">
+							<span class="topic"><a href="/Home/Wish/@item.ID">@item.Title</a></span> <span><a href='/Home/Weaker/@item.ID'>@item.UserName</a></span>
+							<span>@item.DateStart.ToString("yyyy/MM/dd")</span> <span>@item.Status</span>
+						</dd>
+	 }
+				</dl>
+			</div>
+		</div>
+		<!---------------------------------------------------------------------------->
+	</div>
+	<!--------------------------------------[/左]-------------------------------------->
+	<!--------------------------------------[右]-------------------------------------->
+	<div id="right">
+		<div id="show">
+			<div class="show_title">
+				心愿动态
+			</div>
+			<!------ cslide begin ------>
+			<div id="slide_frame" style="height: 320px;">
+				<div class="slide_container" style="height: 320px;">
+					<ol class="slide_ol" style="margin-top: 0px;">
+						@foreach (var item in ViewBag.New)
+	  {
+							<li class="block">
+								<br>
+								<img src="/content/images/@item.PictureFile" width="50px" height="50px">
+								<span>
+									<!-- <a href="weaker.php?weakerid=91"> -->
+									@item.Name.Substring(0, 1)**<!-- </a> -->
+									<a href="/Home/wish/@item.ID">@item.Title</a>
+									<br>
+									<span class="time">@item.DateStart</span> </span></li>
+	  }
+					</ol>
+				</div>
+				<div class="slide_control" style="display: none;">
+				</div>
+			</div>
+			<!------ cslide end ------>
+		</div>
+		<!---------------------------------------------------------------------------->
+		<dl id="already">
+			<dt>最新认领</dt>
+			@foreach (var item in ViewBag.AlreadyApply)
+   {
+				<dd>
+					<a href="/Home/Wish/@item.ID" title="@item.Title">@item.Title</a>
+				</dd>
+   }
+		</dl>
+	</div>
+	<!--------------------------------------[/右]-------------------------------------->
+</div>
+<!-- pop html begin -->
+@*<div id="pop_content">
+	<dl>
+		<dt>
+			<input type="button" onclick="pop_close()" value="关闭" />
+		</dt>
+		<div id="pop_content_body">
+		</div>
+	</dl>
+</div>
+<div id="pop_background">
+</div>
+<!-- pop html end -->
+<script src="/templates/default/js/pop.js" type="text/javascript"></script>
+<script type="text/javascript">
+	function pop_login(el) {
+		$.post("http://www.weixinyuan.com/plus/ajax.php", { "act": "pop_login" },
+ 	    function (data, textStatus) {
+ 	    	pop_open(data, el);
+ 	    })
+	}
+</script>*@ 

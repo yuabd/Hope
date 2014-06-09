@@ -1,0 +1,35 @@
+﻿@model Hope.Models.SitePaginated<Hammer.Logic.Models.News>
+@{
+	ViewBag.Title = "新闻公告";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/News-list.css" rel="stylesheet" type="text/css" />
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href=''>新闻公告</a>
+	</div>
+</div>
+<div id="container">
+	<!--------------------------------------[导航]-------------------------------------->
+	<ul id="example">
+		@foreach (var item in Model)
+  {
+			<li>
+				<dl>
+					<!-- 心愿编号 -->
+					@*<span style="color: #ff7e00; font-weight: bold;">No.@item.ID</span>*@
+					<!-- /心愿编号 -->
+					<dt><a href="/News/Detail/@item.ID">@item.Title</a></dt>
+					<dd>
+						浏览量：@item.Count
+					</dd>
+					<dd>
+						发起时间：@item.DateCreated.ToString()</dd>
+				</dl>
+			</li>
+  }
+	</ul>
+</div>
+@Model.Pager("pager")

@@ -1,0 +1,54 @@
+﻿@model Hope.Models.Wish
+
+<div class="section">
+	<div class="section-header">
+		<h3>学生信息</h3>
+	</div>
+	<div class="section-body">
+		<div class="row">
+			<label>姓名：</label>
+			@Html.TextBoxFor(m => m.StudentName, new { @class = "large"})
+			@Html.ValidationMessageFor(m => m.StudentName)
+		</div>
+		<div class="row">
+			<label>管理人联系电话：</label>
+			@Html.TextBoxFor(m => m.SchoolName)
+			@Html.ValidationMessageFor(m => m.SchoolName)
+		</div>
+		<div class="row">
+			<label>家庭住址：</label>
+			@Html.TextBoxFor(m => m.Address)
+			@Html.ValidationMessageFor(m => m.Address)
+		</div>
+		<div class="row">
+			<label>家庭联系电话：</label>
+			@Html.TextBoxFor(m => m.Tel)
+			@Html.ValidationMessageFor(m => m.Tel)
+		</div>
+		<div class="row">
+			<label>性别：</label>
+			@Html.TextBoxFor(m => m.Gender, new{@class = "small"})
+			@Html.ValidationMessageFor(m => m.Gender)
+		</div>
+		<div class="row">
+			<label>年龄：</label>
+			@Html.TextBoxFor(m => m.Age, new { @class = "small"})
+			@Html.ValidationMessageFor(m => m.Age)
+		</div>
+		<div class="row">
+			<label>家庭基本情况：</label>
+			@Html.TextAreaFor(m => m.Situation, new { cols = 20, style = "width: 300px; height: 80px;" })
+			@Html.ValidationMessageFor(m => m.Situation)
+		</div>
+	</div>
+</div>
+<div class="section">
+	<div class="section-header">
+		<h3>小小愿望</h3>
+	</div>
+	<div class="section-body">
+		@Html.TextAreaFor(m => m.Detail, new { style = "width: 300px; height: 80px;" })
+		@Html.ValidationMessageFor(m => m.Detail)
+	</div>
+</div>
+@Html.HiddenFor(m => m.IsApply)

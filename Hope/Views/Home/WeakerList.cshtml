@@ -1,0 +1,80 @@
+﻿@model Hope.Models.SitePaginated<Hammer.Logic.Models.User>
+@{
+	ViewBag.Title = "心愿发起人";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/Weaker-list.css" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+			// --------- float_display begin ---------
+			float_display('#container');
+
+			function float_display(e) {
+				e = $(e);
+				mybox = e.children();
+				mybox_length = mybox.length;
+				for (i = 0; i < mybox_length; ++i) {
+					mybox[i] = $(mybox[i]);
+				}
+				tempbox = mybox[mybox_length - 1];
+				items = tempbox.children();
+				items_length = items.length;
+				index = 1;
+				for (i = 0; i < items_length; ++i) {
+					mybox[index].append(items[i]);
+					index = (index + 1) % mybox_length;
+				}
+			}
+			// --------- float_display begin ---------
+
+		});
+</script>
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href='/Home/WeakerList'>会员列表</a></div>
+</div>
+<div id="container">
+	<div id="one" class="left">
+		<!--<a href="wish_step1.1.php" id="wish">-->
+		@*</a>*@
+		<div id="select_city">
+			<a class="@ViewBag.All" href="/Home/WeakerList">默认排序</a> 
+			<a class="@ViewBag.Heart" href="/Home/WeakerList?sort=Heart desc">按爱心数</a> 
+			<a class="@ViewBag.Support" href="/Home/WeakerList?sort=Support desc">按支持数</a>
+		</div>
+	</div>
+	<div id="two" class="left">
+	</div>
+	<div id="three" class="left">
+	</div>
+	<div id="four" class="right">
+		<!--------------------------------------[例子]-------------------------------------->
+		@foreach (var item in Model)
+  {
+	  <div class="example">
+			<a href="/Home/Weaker/@item.ID">
+				<img src="/Content/images/@item.HeadPicture" width="220px" alt="" /></a>
+			<dl>
+				<dt>
+					<a href="/Home/Weaker/@item.ID"><h1>
+						@item.UserName
+						<!-- 社区字段 -->
+						<!-- /社区字段 -->
+					</h1></a>
+					爱心数: @item.Heart
+					支持数: @item.Support
+					</dt>
+				<!-- wish begin -->
+				<!-- wish end -->
+			</dl>
+		</div>
+  }
+		<!--------------------------------------[/例子]-------------------------------------->
+	</div>
+</div>
+
+@Model.Pager("pager")

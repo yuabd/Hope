@@ -1,0 +1,99 @@
+﻿@{
+	ViewBag.Title = "WishListView";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="searchBar">
+	<ul>
+		<li><span class="title">心愿标题：</span>
+			<input col="Title" type="text" />
+		</li>
+	</ul>
+</div>
+<div class="toolBar">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<a href="javascript:void(0)" class="easyui-linkbutton" plain="false" iconcls="icon-add"
+					onclick="Add()">发布心愿</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div id="DataGrid">
+</div>
+<script>
+	Search = function () {
+		Reflesh();
+	};
+
+	var url = "/MyAccount/Wish/WishListJson";
+	//刷新
+	function Reflesh() {
+		var param = $(".searchBar").GetPostData();
+		param.Status = @ViewBag.Status;
+		DataGridExtend.searchGrid("DataGrid", param, url);
+	};
+
+	$(function () {
+		var param = $('.searchBar').GetPostData();
+		param.Status = @ViewBag.Status;
+		$('#DataGrid').U1EasyGrid({
+			queryParams: param,
+			singleSelect: false,
+			url: url,
+			columns: [[
+                { field: 'ck', title: '选择', checkbox: true },
+                { field: 'Title', title: '心愿标题', align: 'center', width: 250 },
+                { field: 'Name', title: '许愿人', align: 'center', width: 80 },
+				{ field: 'ApplyUser', title: '认领人', align: 'center', width: 80, formatter: ApplyUserName },
+                { field: 'DateStart', title: '发布时间', align: 'center', width: 100, formatter: DataGridExtend.datetimeFormat },
+				{ field: 'Status', title: '状态', align: 'center', width: 100 },
+				{ field: 'Count', title: '访问量', sortable: true, align: 'center', width: 100 },
+                { field: 'op', title: '操作', align: 'center', formatter: opFormat, width: 150 }
+          ]]
+		});
+	});
+
+	function ApplyUserName(val, row, rowIndex) {
+		var str = "<a href='/Home/Weaker/" + row.ApplyUserID + "' target='_blank'>";
+		if(val != null)
+		{
+			str += val;
+		}
+		str += "</a>";
+		 
+		return str;
+	}
+
+	//操作列
+	function opFormat(val, row, rowIndex) {
+		var html = "";
+		html = "<a href=\"javascript:void(0)\"  onClick=\"Edit('" + row.ID + "')\" >编辑</a>";
+		if (row.StatusID == 0 || row.StatusID == 1) {
+			html += " | <a href=\"javascript:void(0)\"  onClick=\"Del('" + row.ID + "')\" >删除</a>";
+		}
+		
+		return html;
+	}
+
+	function Add() {
+		openPage('发布心愿', '/MyAccount/Wish/addWishView?tab=' + getTabTitle());
+	}
+
+	function Edit(id) {
+		openPage('编辑心愿', '/MyAccount/Wish/EditWishView?id=' + id + "&tab=" + getTabTitle());
+	}
+
+	function Del(id) {
+		if (confirm('确认要删除该心愿吗？')) {
+			$.U1Ajax('/MyAccount/Wish/DeleteWishJson/' + id, null, function (result) {
+				if (result.Tag == 1) {
+					alert("删除成功！");
+					Reflesh();
+				} else {
+					alert(result.Message);
+				}
+			}, false);
+		}
+	}
+</script>

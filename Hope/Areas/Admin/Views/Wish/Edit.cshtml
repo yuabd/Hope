@@ -1,0 +1,16 @@
+﻿@model Hope.Models.Wish
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>编辑愿望</h2>
+@using (Html.BeginForm())
+{
+	@Html.Partial("_Form")
+	@Html.HiddenFor(m => m.WishID)
+	
+	<div class="section">
+		<button type="submit">提交</button>
+	</div>
+}

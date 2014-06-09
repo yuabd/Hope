@@ -1,0 +1,260 @@
+﻿@{
+    ViewBag.Title = "微心愿";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+    <link href="/App_Themes/Site/index.css" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+    <script src="/Scripts/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // --------- username password begin ---------
+        function myfocus(e) {
+            _e = $(e);
+            _default = _e.attr('default');
+            if (_e.val() == _default)
+                _e.val('');
+        }
+
+        function myblur(e) {
+            _e = $(e);
+            _default = _e.attr('default');
+            if (_e.val() == '')
+                _e.val(_default);
+        }
+
+        function passwordfocus(e, real) {
+            $(e).css({ display: 'none' });
+            _real = $('#' + real);
+            _real.css({ display: 'block' });
+            _real.focus();
+        }
+
+        function passwordblur(e, fake) {
+            _e = $(e);
+            if (_e.val() == '') {
+                _e.css({ display: 'none' });
+                _fake = $('#' + fake);
+                _fake.css({ display: 'block' });
+            }
+        }
+
+        $(function () {
+            $('#carousel').carouFredSel({
+                width: '100%',
+                items: {
+                    visible: 3,
+                    start: -1
+                },
+                scroll: {
+                    items: 1,
+                    duration: 1000,
+                    timeoutDuration: 3000
+                },
+                prev: '#prev',
+                next: '#next',
+                pagination: {
+                    container: '#pager',
+                    deviation: 1
+                }
+            });
+        });
+
+        function Login() {
+            var userName = $("#text_username").val();
+            var pwd = $("#text_password").val();
+            if (userName == $("text_username").attr("default") || pwd == $("text_password_fake").attr("default")) {
+                alert("用户名或密码不能为空!");
+                return;
+            }
+            $.U1Ajax("/Account/LoginJson", { UserID: userName, Password: pwd }, function (result) {
+                if (result.Tag == 1) {
+                    alert("登录成功!");
+                    window.location.href = "/";
+                }
+                else {
+                    alert(result.Message);
+                }
+            });
+        }
+    </script>
+    <style>
+        #carousel img
+        {
+            display: block;
+            float: left;
+        }
+        #prev, #next
+        {
+            background-color: rgba(255, 255, 255, 0.7);
+            display: block;
+            height: 450px;
+            width: 50%;
+            top: 0;
+            position: absolute;
+        }
+        #prev:hover, #next:hover
+        {
+            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        #prev
+        {
+            left: -495px;
+        }
+        #next
+        {
+            right: -495px;
+        }
+        #pager
+        {
+            margin-left: -470px;
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+        }
+        #pager a
+        {
+            border: 2px solid #fff;
+            border-radius: 10px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px 0 0;
+        }
+        #pager a:hover
+        {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        #pager a span
+        {
+            display: none;
+        }
+        #pager a.selected
+        {
+            background-color: #fff;
+        }
+    </style>
+}
+<!--------------------------------------[展示横幅]-------------------------------------->
+<!-------- slides begin -------->
+<div id="slides" class="banner">
+    <div id="carousel">
+        @*<img src="/content/images/building1.jpg" alt="building1" width="990" height="400" />*@
+        <img src="/Content/images/DSCF0194.jpg" alt="building2" width="990" height="400" />
+        <img src="/content/images/DSCF0203.jpg" alt="building3" width="990" height="400" />
+        <img src="/content/images/DSCF0208.jpg" alt="building4" width="990" height="400" />
+        <img src="/content/images/DSCF0215.jpg" alt="building5" width="990" height="400" />
+    </div>
+    <a href="#" id="prev" title="上一张"></a><a href="#" id="next" title="下一张"></a>
+    <div id="pager">
+    </div>
+</div>
+<!-------- slides end -------->
+<!--------------------------------------[内容]-------------------------------------->
+<div style="clear: both;">
+</div>
+<div id="container">
+    <!--------------------------------------[左]-------------------------------------->
+    <div id="left">
+        <!--------------------------------------[瓷片]-------------------------------------->
+        <div id="tile">
+            <div id="wish_num" class="left">
+                <a href="/Home/WishList">@ViewBag.HomeTotal.wish_num<span>个</span></a>
+            </div>
+            <div id="weaker_num" class="right">
+                <a href="/home/weakerlist">@ViewBag.HomeTotal.weaker_num<span>人</span></a>
+            </div>
+            <div id="finished" class="left">
+                <a href="/Home/WishList?status=3">@ViewBag.HomeTotal.finished<span>个</span></a>
+            </div>
+            <div id="give_num" class="right">
+                <a href="/home/weakerlist">@ViewBag.HomeTotal.give_num<span>人</span></a>
+            </div>
+            <div id="unfinished" class="left">
+                <a href="/home/weakerlist?status=1">@ViewBag.HomeTotal.unfinished.Count<span>个</span></a>
+            </div>
+            <div id="unfinished_list" class="left">
+                <div style="padding: 5px;">
+                    <ul>
+                        @foreach (var item in ViewBag.HomeTotal.unfinished)
+                        {
+                            <li><a href="/Home/Wish/@item.ID" title="@item.Title">@item.Title</a><em>@item.DateStart.ToString()</em></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div id="give" class="right">
+                <a href="/home/weakerlist?status=1"></a>
+            </div>
+        </div>
+        <!--------------------------------------[/瓷片]-------------------------------------->
+        <!--------------------------------------[新闻]-------------------------------------->
+        <div id="partner">
+            <dl>
+                <dt>关于我们</dt>
+                <dd style="line-height: 22px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小心愿，大希望。 微心愿平台全面启动。 一本想了很久的图书，一只看了很多遍的铅笔盒，一个简单的生日会……一个个微小的心愿，在我们看来本身微不足道的事情。
+                    微心愿，发挥我们一点微能量，传递爱心接力正能量，让需要帮助的人如愿。
+                </dd>
+            </dl>
+        </div>
+        <!--------------------------------------[/新闻]-------------------------------------->
+    </div>
+    <!--------------------------------------[/左]-------------------------------------->
+    <!--------------------------------------[右]-------------------------------------->
+    <div id="right">
+        <!--------------------------------------[登陆前]----------------------------------->
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div id="login">
+                <input id="text_username" type="text" value="输入用户名" default='输入用户名' onfocus="myfocus(this)"
+                    onblur="myblur(this)" />
+                <input id="text_password_fake" type="text" value="输入密码" default='输入密码' onfocus="passwordfocus(this, 'text_password')" />
+                <input id="text_password" type="password" value="" onblur="passwordblur(this, 'text_password_fake')"
+                    style="display: none" onkeydown="if(event.keyCode==13){Login();}" />
+                <input id="btn_login" type="button" class="button" onclick="Login()" />
+                @*<a href="javascript:void(0);">忘记密码？</a> *@ <a href="/Account/register" class="right">
+                    注册新用户</a>
+            </div>
+        }
+        <!-----------------------------------[/登陆前]-------------------------------------->
+        <!--------------------------------------[排行榜]-------------------------------------->
+        <div class="ranklist">
+            <a href="/Home/weakerlist"></a>
+            <ul>
+                <li><span class="left">用户名</span><span class="right">爱心数</span></li>
+                @foreach (var item in ViewBag.HomeTotal.ListPeople)
+                {
+                    <li><a href="javascript:void(0);">@item.Value</a><img src="/Content/images/heart.png"
+                        alt="" />@item.Key</li>
+                }
+            </ul>
+        </div>
+        <div class="ranklist newslist">
+            <a class="news" href="/News"></a>
+            <ul>
+                @foreach (var item in ViewBag.HomeTotal.News)
+                {
+                    <li><a href="/News/Detail/@item.ID">@item.Title</a></li>
+                }
+            </ul>
+        </div>
+        <!--------------------------------------[/排行榜]-------------------------------------->
+        <!--------------------------------------[图片]-------------------------------------->
+        <!-- <div id="img"> <a href="#"><img src="/templates/default/temp/6.jpg"/></a> <a href="#"><img src="/templates/default/temp/7.jpg"/></a> </div> -->
+        <!--------------------------------------[/图片]-------------------------------------->
+    </div>
+    <!--------------------------------------[/右]-------------------------------------->
+    @*<div id="partner">
+      <dl>
+        <dt>合作伙伴</dt>
+        <dd> 
+        	<span>合作单位：</span> 
+            
+        	<span>品牌运营：</span> 
+            
+       </dd>
+      </dl>
+	</div> *@
+</div>

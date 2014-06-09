@@ -1,0 +1,262 @@
+﻿@model Hammer.Logic.Models.WishEntity
+@{
+	ViewBag.Title = "心愿";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/Wish.css" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+	<script src="/Scripts/pop.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function popShow() {
+			var isLogin = '@User.Identity.IsAuthenticated';
+			if (isLogin.toLowerCase() == "false") {
+				alert("请先登录");
+				window.location.href = "/Account/Index";
+				return;
+			}
+
+			pop_open();
+		}
+
+		function Apply(id) {
+			$.U1Ajax("/Home/ApplyWish", { id: id }, function (result) {
+				if (result.Tag == 1) {
+					alert("认领成功!");
+					window.location.reload();
+				} else {
+					alert(result.Message);
+				}
+			});
+		}
+
+		function quit(id) {
+			if (confirm('确定要放弃吗?!')) {
+				$.U1Ajax("/Home/Quit", { id: id }, function (result) {
+					if (result.Tag == 1) {
+						alert("操作成功!");
+						window.location.reload();
+					} else {
+						alert(result.Message);
+					}
+				});
+			}
+		}
+
+		// --------- support_add begin ---------
+		g_support = false;
+		function support_add() {
+			if (g_support)
+				return;
+
+			_span = $("#count_support");
+			_span.text(Number(_span.text()) + 1);
+			g_support = true;
+			$.U1Ajax("/Home/Support", { "id": "@Model.ID", "type": "wish" }, function () {
+				g_support = true;
+			});
+		}
+
+		// --------- support_add end ---------
+	</script>
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href='/home/wishlist'>心愿列表</a> > <a href=''>@Model.Title</a>
+	</div>
+</div>
+<div id="container">
+	<!---------------------------------------------------------------------------->
+	<div class="left">
+		<div id="info">
+			<div id="agree">
+				<a href="javascript:void(0);" onclick="support_add();">
+					<h1 id="count_support">
+						@Model.Support</h1>
+					<h2>
+						顶一下</h2>
+				</a>
+			</div>
+			<a href="/Home/Weaker/@Model.User.ID">
+				<img src="/content/images/@Model.User.HeadPicture" width="110px" height="110px">
+			</a>
+			<dl>
+				<dt><a href="/Home/Weaker/@Model.User.ID">@Model.User.UserName</a></dt>
+				<dd>
+					发起人
+				</dd>
+				<dd>
+					<span>发布时间：@Model.DateStart.ToString()</span></dd>
+				<dd>
+					<span>@(Model.Count)次浏览</span>
+				</dd>
+			</dl>
+			<dl>
+				@if (Model.ApplyUserID.ToString() == User.Identity.Name)
+	{
+					<dt>信息</dt>
+					<dd>
+						真实姓名: <span>@Model.User.RealName</span>
+					</dd>
+					<dd>
+						联系方式: <span>@Model.User.Phone</span>
+					</dd>				
+	}
+			</dl>
+		</div>
+		<dl id="introduce">
+			<dt><span>许愿人简介</span></dt>
+			<dd>
+				@Model.Description<!-- <a href="#">更多></a> --></dd>
+			<dd class="green">
+				<div style="font-weight: bold; font-size: 14px; color: #000;">
+					发起人寄语
+				</div>
+				@Model.Hope
+			</dd>
+			<dd class="but">
+				<!-- 结束 -->
+				@if (Model.Status == 2)
+	{
+		if (Model.ApplyUserID.ToString().Equals(User.Identity.Name))
+		{
+					<a id="btn_help_quit" href="javascript:quit('@Model.ID')"></a>
+		}
+		else
+		{
+					<a id="btn_helping"></a>
+		}
+	}
+	else if (Model.Status == 1)
+	{
+					<a onclick="javascript:popShow();" id="btn_help"></a>
+	}
+	else
+	{
+					<a id="btn_finish"></a>
+	}
+			</dd>
+			<dd class="pic">
+				<a href="">
+					<img src="/Content/images/@Model.PictureFile" width="190px"
+					height="190px"></a> <span>@Model.Name.Substring(0, 1)**</span> <a href="#" class="clear">
+						许愿人</a></dd>
+			<dd class="arrows1">
+				◆</dd>
+			<dd class="arrows2">
+				◆</dd>
+			@*<dl id="wish">*@ @*</dl>*@
+		</dl>
+		<!---------------------------------------------------------------------------->
+		<dl id="wish">
+			<dt>TA的心愿</dt>
+			<dd>
+				@Model.WishDescription
+			</dd>
+		</dl>
+		<dl>
+			@if (Model.Status != Hammer.Logic.Helper.WishStatus.Done)
+   {
+				@Html.Raw("<dl id=\"step1\">")
+   }
+   else
+   {
+				@Html.Raw("<dl id=\"step2\">")
+   }
+			<dt></dt>
+			<dd>
+				<ul>
+					<li style="font-weight: bold;">帮助流程：</li>
+					<li>第一步：先认领心愿。</li>
+					<li>第二步：查看页面顶部发起人联系方式。</li>
+					<li>第三步：与发起人取得联系，商量帮助方式，帮助时间等具体事项。</li>
+					<li>第四步：认领人可自行前往帮助心愿人完成心愿，也可联系发起人一起完成。</li>
+					<li>第五步：心愿完成之后，由认领人追加反馈信息，公示帮助进度。</li>
+					<li>第六步：心愿完成。</li>
+				</ul>
+			</dd>
+			<dd>
+			</dd>
+		</dl>
+		<br />
+		<br />
+	</div>
+	<div class="right">
+		<!---------------------------------------------------------------------------->
+		<div id="show">
+			<div class="show_title">
+				心愿动态</div>
+			<!------ cslide begin ------>
+			<div id="slide_frame" style="height: 320px;">
+				<div class="slide_container" style="height: 320px;">
+					<ol class="slide_ol" style="margin-top: 0px;">
+						@foreach (var item in ViewBag.New)
+	  {
+							<li class="block">
+								<br>
+								<img src="/content/images/@item.PictureFile" width="50px" height="50px">
+								<span>
+									<!-- <a href="weaker.php?weakerid=91"> -->
+									@item.Name.Substring(0, 1)**<!-- </a> -->
+									<a href="/Home/wish/@item.ID">@item.Title</a>
+									<br>
+									<span class="time">@item.DateStart</span> </span></li>
+	  }
+					</ol>
+				</div>
+				<div class="slide_control" style="display: none;">
+				</div>
+			</div>
+			<!------ cslide end ------>
+		</div>
+		<!---------------------------------------------------------------------------->
+		<dl id="already">
+			<dt>最新认领</dt>
+			@foreach (var item in ViewBag.AlreadyApply)
+   {
+				<dd>
+					<a href="/Home/Wish/@item.ID" title="@item.Title">@item.Title</a>
+				</dd>
+   }
+		</dl>
+		<!---------------------------------------------------------------------------->
+	</div>
+</div>
+<div id="pop_content">
+	<dl>
+		<dt>
+			<input type="button" onclick="pop_close()" value="关闭" />
+		</dt>
+		<div id="pop_content_body">
+			<meta charset="utf-8">
+			<!-- css -->
+			<link rel="stylesheet" type="text/css" href="/App_Themes/Site/common.css">
+			<dl>
+				<dt>帮助流程：</dt>
+				<dd>
+					<ul>
+						<li>第一步：先认领心愿。</li>
+						<li>第二步：查看页面顶部发起人联系方式。</li>
+						<li>第三步：与发起人取得联系，商量帮助方式，帮助时间等具体事项。</li>
+						<li>第四步：认领人可自行前往帮助心愿人完成心愿，也可联系发起人一起完成。</li>
+						<li>第五步：心愿完成之后，由发起人追加反馈信息，公示帮助进度。</li>
+						<li>第六步：心愿完成。</li>
+					</ul>
+				</dd>
+				@*<dd>
+						<span>用户名：</span><input id="text_username2" name="text_username" type="text"></dd>
+					<dd>
+						<span>密码：</span><input id="text_password2" type="password" onkeydown="if(event.keyCode==13){login2()}"></dd>*@
+				<dd>
+					<span></span>
+					<input id="btn_login" class="admin_submit" type="button" onclick="Apply('@Model.ID')">
+					<input class="admin_cancel" type="button" onclick="pop_close()">
+					@*<span><a href="/Account/Register">注册</a></span>*@</dd>
+			</dl>
+			<!-- js -->
+		</div>
+	</dl>
+</div>
+<div id="pop_background" style="opacity: 0.3; display: none;">
+</div>

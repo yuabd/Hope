@@ -1,0 +1,124 @@
+﻿@model Hammer.Entity.MenuEntity
+@{
+    ViewBag.Title = "EditMenu";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="pagetable">
+	@*<tr>
+        <td class="title">
+            父节点：
+        </td>
+        <td>
+			@Html.Partial("../Control/MenuTreeView")
+            <span class="icon-tip" style="padding-left: 18px; margin-left: 18px;">为空，默认新增主菜单！</span>
+			@Model.ParentID
+        </td>
+    </tr>*@
+    <tr>
+        <td class="title">
+            <span class="red">*</span>名称：
+        </td>
+        <td>
+            <input validtype="required(名称)" value="@Model.MenuName" col="MenuName" class="easyui-validatebox textbox validatebox-text" id="txtName" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td class="title">
+            类型：
+        </td>
+        <td>
+            <div id="typeDiv">
+                <input col="Type" name="type" id="Menu" value="Menu" checked="checked" type="radio">菜单
+                <input col="Type" name="type" id="Page" value="Page" type="radio">页面
+                @*<input id="Button" value="@Model.Type" type="hidden">*@
+            </div>
+        </td>
+    </tr>
+    <tr id="urlTd" style="display: none;">
+        <td class="title">
+            URL：
+        </td>
+        <td>
+	        <input id="MenuUrl" value="" col="MenuUrl" class="textbox" style="width: 176px;" type="text" />
+        </td>
+    </tr>
+    @*<tr style="display: none;" id="rightKeyTd">
+        <td class="title">
+            RightKey：
+        </td>
+        <td>
+            <input id="txtRightKey" class="textbox" type="text">
+        </td>
+    </tr>*@
+    <tr style="display: table-row;" id="openTd">
+        <td class="title">
+            默认打开：
+        </td>
+        <td>
+            <div id="op">
+                <input name="Selected" id="rdoY" value="Y" type="radio" />是
+                <input name="Selected" id="rdoN" value="N" checked="checked" type="radio" />否
+				<input type="hidden" id="Selected" value="@Model.Selected" />
+            </div>
+        </td>
+    </tr>
+    <tr style="display: table-row;" id="orderTd">
+        <td class="title">
+            排序值：
+        </td>
+        <td>
+            <input id="OrderIndex" class="easyui-validatebox textbox validatebox-text" 
+			validtype="Num|required" value="@Model.OrderIndex" col="OrderIndex" type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td class="title">
+        </td>
+        <td>
+			<input type="hidden" value="@Model.ID" col="ID" />
+			<input type="hidden" value="@Model.SystemID" col="SystemID" />
+            <input id="btnSave" value=" 保 存 " class="button" type="button" />
+        </td>
+    </tr>
+</table>
+<script>
+	$(function () {
+		var yN = $("#Selected").val();
+
+		$('#typeDiv input').change(function () {
+			if (this.id == "Page") {
+				$('#urlTd').show();
+				$('#rightKeyTd').show();
+			} else {
+				$('#urlTd').hide();
+
+				$('#rightKeyTd').hide();
+
+			}
+		});
+
+		$("#rdo" + yN).attr("checked", "checked");
+		$('#btnSave').click(function () {
+			if (!$.validatebox.valid()) {
+				return;
+			}
+
+			var select = $('#op input:radio:checked').val();
+			var param = $(".pagetable").GetPostData();
+			//			param.ParentID = $('.combo-value').val();
+			param.Selected = select;
+			$.U1Ajax("/Admin/Menu/EditMenuJson", param, function (result) {
+				if (result.Tag > 0) {
+					alert('保存成功! ');
+
+					PW.closeWindow();
+					getCD().reflesh();
+				}
+				else {
+					alert(result.Message);
+				}
+			}, false);
+		});
+	});
+</script>

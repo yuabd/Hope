@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<report id="WishList" name="希望列表">
+		<sql>
+			<![CDATA[
+        select a.*, b.UserName as AddUser, c.UserName as ApplyUser from Wish a
+		left join [User] b on b.ID = a.UserID
+		left join [User] c on c.ID = a.ApplyUserID
+      ]]>
+		</sql>
+		<dynamic prepend ="WHERE ">
+			<isNotEmpty property="Title" prepend="And" value="" type="">
+				<![CDATA[ a.Title like '%' + @Title + '%' ]]>
+			</isNotEmpty>
+			<isNotEmpty property="StartDate" prepend="And" value="" type="">
+				<![CDATA[ a.DateStart >= @StartDate ]]>
+			</isNotEmpty>
+			<isNotEmpty property="EndDate" prepend="And" value="" type="">
+				<![CDATA[ a.DateStart <= @EndDate ]]>
+			</isNotEmpty>
+			<isNotEmpty property="UserID" prepend="And" value="" type="">
+				<![CDATA[ a.UserID = @UserID ]]>
+			</isNotEmpty>
+			<isNotEmpty property="Status" prepend="And" value="" type="">
+				<![CDATA[ a.Status = @Status ]]>
+			</isNotEmpty>
+			<isNotEmpty property="ApplyUserID" prepend="And" value="" type="">
+				<![CDATA[ a.ApplyUserID = @ApplyUserID ]]>
+			</isNotEmpty>
+		</dynamic>
+		<endSql>
+			order by a.id desc
+		</endSql>
+	</report>
+	<report id="UserList" name="用户">
+		<sql>
+			<![CDATA[
+        select a.* from [User] a
+      ]]>
+		</sql>
+		<dynamic prepend ="WHERE ">
+			<isNotEmpty property="UserName" prepend="And" value="" type="">
+				<![CDATA[ a.UserName like '%' + @UserName + '%' ]]>
+			</isNotEmpty>
+		</dynamic>
+		<endSql>
+			order by id desc
+		</endSql>
+	</report>
+	<report id="NewsList" name="新闻列表">
+		<sql>
+			<![CDATA[
+        select a.* from [News] a
+      ]]>
+		</sql>
+		<dynamic prepend ="WHERE ">
+			<isNotEmpty property="Title" prepend="And" value="" type="">
+				<![CDATA[ a.Title like '%' + @Title + '%' ]]>
+			</isNotEmpty>
+			<isNotEmpty property="CategoryID" prepend="And" value="" type="">
+				<![CDATA[ a.CategoryID = @CategoryID ]]>
+			</isNotEmpty>
+		</dynamic>
+		<endSql>
+			order by id desc
+		</endSql>
+	</report>
+</root>

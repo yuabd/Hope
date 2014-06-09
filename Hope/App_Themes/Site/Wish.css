@@ -1,0 +1,600 @@
+﻿/*--------------------------------------[璺緞]--------------------------------------*/
+#path
+{
+	width: 990px;
+	height: 60px;
+	margin: 0 auto;
+	border-bottom: #dfdfdf 1px solid;
+}
+#path .left
+{
+	line-height: 60px;
+	color: #167f39;
+}
+/*--------------------------------------[/璺緞]--------------------------------------*/
+
+
+#container #info
+{
+	margin: 30px 0 0 0;
+	height: 110px;
+}
+#container #info #agree
+{
+	min-width: 94px;
+	height: 94px;
+	border: #ececec 8px solid;
+	float: left;
+	text-align: center;
+	margin-right: 10px;
+}
+#container #info #agree h1
+{
+	color: #47b200;
+	font-size: 30px;
+	text-align: center;
+	margin: 20px 0 0 0;
+	padding: 0;
+	font-weight: 100;
+}
+#container #info #agree h2
+{
+	text-align: center;
+	color: #333;
+	font-size: 16px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+#container #info #agree a
+{
+	display: inline-block;
+	width: 94px;
+	height: 94px;
+}
+#container #info #agree a:hover
+{
+	text-decoration: none;
+	background: #ececec;
+}
+#container #info img
+{
+	float: left;
+	margin-right: 10px;
+}
+#container #info dl, #container #info dt, #container #info dd
+{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	line-height: 22px;
+	color: #333;
+}
+#container #info dl
+{
+	float: left;
+	padding-top: 5px;
+	color: #333;
+}
+#container #info dl span
+{
+	display: inline-block;
+	margin-right: 15px;
+	color: #333;
+}
+#container #info dt, #container #info dt a
+{
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+#container #info .contact
+{
+	border: #ff7e00 1px solid;
+	padding: 3px 10px;
+	background: #fbf7ec;
+	margin-top: 9px;
+	color: #000;
+}
+/*--------------------------------------------------*/
+
+#container #introduce, #container #introduce dt, #container #introduce dd
+{
+	padding: 0;
+	margin: 0;
+}
+#container #introduce dt
+{
+	color: #999;
+}
+#container #introduce
+{
+	border: #dfdfdf 3px solid;
+	clear: both;
+	position: relative;
+	margin: 20px 0 10px 0;
+	padding: 25px 25px 25px 320px;
+	min-height: 250px;
+	_height: 350px;
+}
+#container #introduce *
+{
+	text-align: left;
+}
+#container #introduce .arrows1
+{
+	font-size: 30px;
+	color: #dfdfdf;
+	position: absolute;
+	top: -16px;
+	left: 155px;
+	_top: -11px;
+	_left: 160px;
+}
+#container #introduce .arrows2
+{
+	font-size: 30px;
+	position: absolute;
+	top: -12px;
+	left: 155px;
+	_top: -8px;
+	_left: 160px;
+	color: #FFF;
+}
+#container #introduce dt
+{
+	font-size: 22px;
+	margin-bottom: 12px;
+}
+#container #introduce dt span
+{
+	color: #333;
+	font-size: 22px;
+}
+#container #introduce dd
+{
+	font-size: 14px;
+	text-align: left;
+	line-height: 24px;
+	color: #333;
+}
+#container #introduce dd a
+{
+	display: block;
+	text-align: right;
+	font-weight: bold;
+	margin: 5px 0;
+	color: #000;
+}
+#container #introduce dd.green
+{
+	border-left: #47b200 3px solid;
+	padding-left: 15px;
+	font-size: 12px;
+	margin: 30px 0;
+}
+#container #introduce dd.pic
+{
+	background: #f9f9fb;
+	width: 190px;
+	padding: 0 37px 0 40px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+}
+#container #introduce dd.pic img
+{
+	margin: 22px 0 10px 0;
+}
+#container #introduce dd.pic span
+{
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	clear: both;
+	display: inline-block;
+	width: 190px;
+}
+#container #introduce dd.pic span a
+{
+	font-weight: lighter;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	width: 60px;
+	float: right;
+}
+#container #introduce dd.pic a.clear
+{
+	clear: both;
+	float: left;
+	font-weight: lighter;
+}
+
+/*--------------------------------------------------*/
+#container .left
+{
+	width: 710px;
+}
+#container .left #wish
+{
+	width: 640px;
+	margin: 0;
+	padding: 30px 35px;
+	background: #fbf7ec;
+	margin-bottom: 10px;
+}
+#container .left #wish dt, #container .left #wish dd
+{
+	margin: 0;
+	padding: 0;
+}
+#container .left #wish dt
+{
+	color: #167f39;
+	font-size: 22px;
+	text-align: left;
+	margin-bottom: 20px;
+}
+#container .left #wish dd
+{
+	color: #333;
+	font-size: 14px;
+	text-align: left;
+	line-height: 24px;
+}
+#container .left dd.but a
+{
+	display: inline-block;
+	width: 180px;
+	height: 44px;
+}
+#container .left dd.but
+{
+	margin-top: 20px;
+	text-align: center;
+}
+#container .left dd.but a
+{
+	margin: 0 5px;
+}
+#container .left dd.but a:hover
+{
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#btn_help
+{
+	background: url(images/img.png) -710px -165px no-repeat;
+}
+#btn_help_quit
+{
+	background: url(images/img.png) -710px -209px no-repeat;
+}
+#btn_helping
+{
+	background: url(images/img.png) -710px -253px no-repeat;
+}
+#btn_finish
+{
+	background: url(images/img.png) -710px -297px no-repeat;
+}
+#btn_join
+{
+	background: url(images/img.png) -710px -341px no-repeat;
+}
+#btn_join_quit
+{
+	background: url(images/img.png) -710px -385px no-repeat;
+}
+/*--------------------------------------------------*/
+#container .left #contact
+{
+	margin: 0;
+	padding: 0px 35px 15px 35px;
+	background: #f9f9fb;
+	margin-bottom: 10px;
+}
+#container .left #contact dt, #container .left #contact dd
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	text-align: left;
+}
+#container .left #contact dt
+{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 30px 0 15px 0;
+}
+#container .left #contact table
+{
+	text-align: left;
+	width: 80%;
+}
+#container .left #contact tr
+{
+	text-align: left;
+}
+#container .left #contact th, #container .left #contact ul, #container .left td
+{
+	line-height: 24px;
+	text-align: left;
+	color: #333;
+	min-width: 95px;
+	font-weight: lighter;
+}
+/*--------------------------------------------------*/
+
+#step1, #step1 dt, #step1 dd
+{
+	width: 710px;
+	padding: 0;
+	margin: 0;
+}
+#step1
+{
+	margin-bottom: 60px;
+}
+#step1 dt
+{
+	width: 710px;
+	height: 50px;
+	background: url(images/img.png) -0px -982px no-repeat #f9f9fb;
+	display: block;
+}
+#step1 dd ul, #step1 dd li
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	color: #333333;
+	font-size: 14px;
+	line-height: 24px;
+}
+#step1 dd ul
+{
+	margin: 20px 30px;
+}
+#step1 dd a
+{
+	background: url(images/img.png) -710px -429px no-repeat;
+	display: inline-block;
+	width: 180px;
+	height: 44px;
+}
+/*--------------------------------------------------*/
+#step2, #step2 dt, #step2 dd
+{
+	width: 710px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+}
+#step2 dt
+{
+	width: 710px;
+	height: 50px;
+	background: url(images/img.png) -0px -1032px no-repeat #f9f9fb;
+	display: block;
+	text-align: right;
+}
+#step2 dt a
+{
+	color: #FFF;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block;
+	margin-right: 40px;
+}
+#step2 dd
+{
+	text-align: left;
+	color: #333;
+	line-height: 24px;
+	border-bottom: #dfdfdf 1px solid;
+	padding: 0 30px 30px 30px;
+	width: 650px;
+}
+#step2 dd span
+{
+	display: block;
+	text-align: left;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	word-spacing: 20px;
+	line-height: 28px;
+	margin-top: 15px;
+}
+#step2 dd img
+{
+	display: block;
+}
+#step2 dd span a
+{
+	color: #167f39;
+	font-weight: lighter;
+}
+#step2 img, #step2 p
+{
+	text-align: left;
+}
+/*--------------------------------------------------*/
+#container .right
+{
+	width: 270px;
+}
+/*--------------------------------------------------*/
+#container .right #show, #container .right #show dt, #container .right #show dd
+{
+	margin: 0;
+	padding: 0;
+}
+#container .right #show .show_title
+{
+	background: #ececec;
+	height: 50px;
+	color: #333;
+	font-size: 20px;
+	text-align: left;
+	padding-top: 30px;
+	text-indent: 22px;
+}
+/* 姝ゆCSS瀹氫箟浼氶€犳垚鍔ㄧ敾鏈夊崱鐗㈢殑鐜拌薄
+#container .right #show li {
+	text-align:left;
+	margin:10px 10px 0 10px;
+	border-top:#d6d6d6 1px dotted;
+	padding-top:10px;
+	}*/
+
+#container .right #show li img
+{
+	vertical-align: top;
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	margin-right: 17px;
+}
+#container .right #show li span
+{
+	text-align: left;
+	display: inline-block;
+	width: 168px;
+	color: #666;
+	line-height: 18px;
+}
+#container .right #show li span a
+{
+	color: #6abe40;
+}
+#container .right #show li span.time
+{
+	color: #999;
+}
+/*--------------------------------------------------*/
+#container .right #already, #container .right #already dt, #container .right #already dd
+{
+	margin: 0;
+	padding: 0;
+}
+#container .right #already dt
+{
+	background: #ececec;
+	height: 50px;
+	color: #333;
+	font-size: 20px;
+	text-align: left;
+	padding-top: 30px;
+	text-indent: 22px;
+	margin: 15px 0 15px 0;
+}
+#container .right #already dd
+{
+	text-align: left;
+	padding: 0 20px;
+}
+#container .right #already dd a
+{
+	color: #333;
+	line-height: 24px;
+}
+#container .right #already
+{
+	margin-bottom: 40px;
+}
+
+/*--------------------------------------------------*/
+.show_status
+{
+	background: #f9f9fb;
+	text-align: left;
+	height: 110px;
+	line-height: 110px;
+	text-indent: 30px;
+	color: #333;
+	font-weight: bold;
+}
+
+/*--------------- slide begin ---------------*/
+/*frame (container and control)*/
+#slide_frame
+{
+	position: relative;
+	margin-top: 10px;
+}
+#slide_frame .slide_container
+{
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: left;
+}
+/*ol and li*/
+#slide_frame .slide_ol, #slide_frame .slide_ol li
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#slide_frame .slide_ol li
+{
+	border-top: #d6d6d6 1px dotted;
+}
+/*ol(large)*/
+#slide_frame .slide_ol
+{
+	position: absolute;
+}
+/* need for ie6 */
+/*img*/
+#slide_frame .slide_ol img
+{
+	border: solid 0px;
+	vertical-align: top;
+}
+.inline
+{
+	display: inline;
+}
+/* horizon */
+.block
+{
+	display: block;
+}
+/* vertical */
+#slide_frame .slide_control
+{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	cursor: pointer;
+}
+#slide_frame, #slide_frame .slide_container, #slide_frame .slide_ol li
+{
+	width: 270px;
+	height: 80px;
+}
+#slide_frame .slide_container
+{
+	height: 320px;
+}
+/*--------------- slide end ---------------*/
+#uyan_frame *
+{
+	text-align: left !important;
+}
+#uyan_tts
+{
+	display: none;
+}
+#uyan_box_cnt *
+{
+	text-align: left;
+}

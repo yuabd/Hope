@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "简介";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+@section head{
+	<link href="/App_Themes/Site/Contact.css" rel="stylesheet" type="text/css" />
+}
+<div id="path">
+	<div class="left">
+		<a href='/'>首页</a> > <a href='/contact'>关于我们</a>
+	</div>
+</div>
+<div id="container">
+	<h1 class="title">@Model.Title</h1>
+	<div class="content">
+		@Html.Raw(Model.Content)
+	</div>
+</div>
